@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=1609;
+		nextID=1612;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=106;
+		nextID=112;
 	};
 	class Camera
 	{
-		pos[]={4006.2295,10.394773,4388.7759};
-		dir[]={-0.39876705,-0.29556343,0.86815751};
-		up[]={-0.12337436,0.95531958,0.26859799};
-		aside[]={0.90874696,-7.7951699e-007,0.41741115};
+		pos[]={3879.1924,13.903869,4359.2324};
+		dir[]={0.39693794,-0.47992548,0.7823832};
+		up[]={0.21714048,0.87730747,0.42799509};
+		aside[]={0.8917948,-4.9127266e-008,-0.45244694};
 	};
 };
 binarizationWanted=0;
@@ -52,13 +52,14 @@ addons[]=
 	"CUP_AirVehicles_AH6",
 	"CUP_AirVehciles_Cessna",
 	"CUP_WheeledVehicles_Coyote",
-	"CUP_WheeledVehicles_RG31"
+	"CUP_WheeledVehicles_RG31",
+	"acre_sys_radio"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=18;
+		items=19;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -168,6 +169,13 @@ class AddonsMetaData
 		{
 			className="CUP_WheeledVehicles_RG31";
 			name="CUP_WheeledVehicles_RG31";
+		};
+		class Item18
+		{
+			className="acre_sys_radio";
+			name="ACRE2 - Radio";
+			author="ACRE2Team";
+			url="https://github.com/IDI-Systems/acre2";
 		};
 	};
 };
@@ -1325,7 +1333,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=223;
+		items=226;
 		class Item0
 		{
 			dataType="Group";
@@ -147129,6 +147137,52 @@ class Mission
 			};
 			title="Remember to binarize your mission file!";
 			id=1608;
+		};
+		class Item223
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3995.4822,5.2496319,4278.7051};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1609;
+			type="ACRE_RadioSupplyCrate";
+		};
+		class Item224
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={3964.4531,5.2496319,4357.5503};
+				angles[]={0,1.5837781,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1610;
+			type="ACRE_RadioSupplyCrate";
+		};
+		class Item225
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={4060.3657,5.2496319,4369.0566};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=1611;
+			type="ACRE_RadioSupplyCrate";
 		};
 	};
 };
