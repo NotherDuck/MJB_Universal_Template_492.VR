@@ -271,6 +271,9 @@ class tl : r
 	primaryWeapon[] = {
 		"CUP_arifle_ACRC_EGLM_blk_556",
 	};
+	attachment[] = {
+		"CUP_acc_llm_black"
+	};
 	bipod[] = {};
 	magazines[] = {
 	LIST_2("ACE_M84"),
@@ -394,12 +397,13 @@ class ahat : hat
 class sfsl : sl 
 {
 	displayName = "SF Team Leader";
-	goggles[] = 
-	{
+	headgear[] = {
+		"H_HelmetB_camo"
+	};
+	goggles[] = {
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
-	uniform[] = 
-	{
+	uniform[] = {
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
@@ -436,12 +440,13 @@ class sfsl : sl
 class sfmed : cls
 {
 	displayName = "SF Medic";
-	goggles[] = 
-	{
+	headgear[] = {
+		"H_HelmetB_camo"
+	};
+	goggles[] = {
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
-	uniform[] = 
-	{
+	uniform[] = {
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
@@ -493,6 +498,9 @@ class sfmed : cls
 class sfmat : mat
 {
 	displayName = "SF Antitank trooper";
+	headgear[] = {
+		"H_HelmetB_camo"
+	};
 	goggles[] =
 	{
 		"CUP_G_ESS_BLK_Facewrap_Black"
@@ -536,8 +544,15 @@ class sfmat : mat
 class sfar : ar
 {
 	displayName = "SF Machinegunner";
-	goggles[] = {"CUP_G_ESS_BLK_Facewrap_Black"};
-	uniform[] = {"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"};
+	headgear[] = {
+		"H_HelmetB_camo"
+	};
+	goggles[] = {
+		"CUP_G_ESS_BLK_Facewrap_Black"
+	};
+	uniform[] = {
+		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
+	};
 	vest[] = {
 		"CUP_V_B_Ciras_Khaki2"
 		//"rhsusf_plateframe_machinegunner"
