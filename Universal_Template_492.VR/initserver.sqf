@@ -1,3 +1,0 @@
-
-SafestartisActive = true;
-publicVariable "SafestartisActive";
