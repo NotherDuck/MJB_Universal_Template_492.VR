@@ -105,6 +105,7 @@ private _itemEquipment =
 	"CUP_H_PMC_Cap_Back_Tan",
 	"CUP_H_PMC_Cap_EP_Tan",
 	
+	"H_HelmetB_Enh_tna_F",
 	"H_HelmetSpecB",
 	"H_HelmetSpecB_blk",
 	"H_HelmetSpecB_paint2",
@@ -294,15 +295,15 @@ private _itemMod =
 	//Other rail attachments
 	//============================================================
 	"cup_acc_flashlight",
-	"CUP_acc_ANPEQ_15",
-	"CUP_acc_ANPEQ_15_tan_Top",
-	"CUP_acc_ANPEQ_15_Flashlight_tan_L",
-	"CUP_acc_ANPEQ_15_Top_Flashlight_tan_L",
-	"CUP_acc_ANPEQ_15_Black",
-	"CUP_acc_ANPEQ_15_Black_Top",
-	"CUP_acc_ANPEQ_15_Flashlight_Black_L",
-	"CUP_acc_ANPEQ_15_Top_Flashlight_Black_L",
-	"CUP_acc_LLM_black"
+	"CUP_acc_anpeq_15",
+	"CUP_acc_anpeq_15_tan_Top",
+	"CUP_acc_anpeq_15_Flashlight_tan_L",
+	"CUP_acc_anpeq_15_Top_Flashlight_tan_L",
+	"CUP_acc_anpeq_15_Black",
+	"CUP_acc_anpeq_15_Black_Top",
+	"CUP_acc_anpeq_15_Flashlight_Black_L",
+	"CUP_acc_anpeq_15_Top_Flashlight_Black_L",
+	"CUP_acc_llm_black"
 ];
 
 private _itemReflexSight = 
@@ -403,8 +404,7 @@ private _itemWeaponRifle =
 	"CUP_arifle_HK416_Black",
 	"CUP_arifle_M4A1_SOMMOD_black",
 	"CUP_Famas_F1_Rail",
-	"CUP_arifle_M16A1",
-	"CUP_arifle_AK101",
+	"CUP_arifle_M16A4",
 	"CUP_arifle_AK101_railed",
 	
 	//============================================================
@@ -419,6 +419,8 @@ private _itemWeaponRifle =
 	//============================================================
 	"CUP_arifle_AKM",
 	"CUP_arifle_AK103_railed",
+	"CUP_arifle_Sa58V",
+
 
 	//============================================================
 	//7.62x51mm
@@ -448,8 +450,8 @@ private _itemWeaponCarbine =
 	//============================================================
 	//7.62x39mm
 	//============================================================
-	"CUP_arifle_AK104_railed",
-	"CUP_arifle_OTS14_GROZA_762"
+	"CUP_arifle_OTS14_GROZA_762",
+	"CUP_arifle_Sa58_Carbine_RIS_AFG"
 ];
 
 private _itemWeaponAmmo =
@@ -482,6 +484,7 @@ private _itemWeaponAmmo =
 	//============================================================
 	//Magazines
 	"CUP_30Rnd_762x39_AK47_bakelite_M",
+	"CUP_30Rnd_Sa58_M",
 
 	//Loose ammo
 	"greenmag_ammo_762x39_basic_60Rnd",
@@ -540,6 +543,7 @@ private _itemWeaponTracerAmmo =
 	//7.62x39mm
 	//============================================================
 	"CUP_30Rnd_TE1_Yellow_Tracer_762x39_AK47_bakelite_M",
+	"CUP_30Rnd_Sa58_M_TracerY",
 
 	//============================================================
 	//7.62x51mm
@@ -576,7 +580,8 @@ private _itemWeaponHighCapAmmo =
 	//7.62x39mm
 	//============================================================
 	"CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M",
-	"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M",
+	"CUP_45Rnd_Sa58_M",
+	"CUP_45Rnd_Sa58_M_TracerY",
 
 	//============================================================
 	//7.62x51mm
@@ -650,16 +655,38 @@ private _itemWeaponCQB =
 private _itemWeaponAR = 
 [
 	//============================================================
-	//LMGs
-	//============================================================	
+	//5.56x45mm
+	//============================================================
 	"CUP_lmg_L110A1",
-	"CUP_lmg_Pecheneg_B50_vfg",
-	"CUP_lmg_Pecheneg_top_rail_B50_vfg",
-	"CUP_lmg_M60E4",
 	"CUP_arifle_L86A2",
-	"CUP_lmg_MG3_rail",
+
+	//============================================================
+	//5.45x39mm
+	//============================================================
+	"CUP_arifle_RPK74_45",
+	"CUP_arifle_RPK74M_railed",
+	
+	//============================================================
+	//7.62x39mm
+	//============================================================
+	"CUP_arifle_RPK74",
+	"CUP_arifle_RPK74_top_rail",
 	"CUP_arifle_Sa58_Klec",
 	"CUP_arifle_Sa58_Klec_ris",
+
+	//============================================================
+	//7.62x51mm
+	//============================================================
+	"CUP_lmg_M60E4",
+	"CUP_lmg_MG3_rail",
+	
+	//============================================================
+	//7.62x54mm
+	//============================================================
+	"CUP_lmg_Pecheneg_B50_vfg",
+	"CUP_lmg_Pecheneg_top_rail_B50_vfg",
+
+
 
 	//============================================================
 	//LMG Accessories
@@ -678,7 +705,10 @@ private _itemWeaponSFAR =
 	//============================================================
 	//LMG Accessories
 	//============================================================	
-	"muzzle_snds_h_mg_blk_f"
+	"muzzle_snds_h_mg_blk_f",
+	"CUP_100Rnd_556x45_BetaCMag_ar15",
+	"CUP_100Rnd_TE1__Yellow_Tracer_556x45_BetaCMag_ar15",
+	"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M"
 ];
 
 private _itemWeaponARAmmo =
@@ -689,20 +719,11 @@ private _itemWeaponARAmmo =
 	//Boxes
 	"CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249",
 	"CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249",
-	//High Cap Mags for L86
-	"CUP_60Rnd_556x45_SureFire",
-	"CUP_60Rnd_556x45_SureFire_Tracer_Yellow",
 	//Loose belts
 	"greenmag_beltlinked_556x45_basic_200",
 	"greenmag_beltlinked_556x45_basic_100",
 	"greenmag_beltlinked_556x45_basic_50",
 	
-	//============================================================
-	//7.62x39mm
-	//============================================================
-	"CUP_45Rnd_Sa58_M",
-	"CUP_45Rnd_Sa58_M_TracerY",
-
 	//============================================================
 	//7.62x51mm
 	//============================================================
@@ -852,7 +873,7 @@ private _itemWeaponGL =
 	//5.56x45mm
 	"arifle_Mk20_GL_plain_F",
 	"CUP_arifle_ACR_EGLM_blk_556",
-	"CUP_arifle_M16A1GL",
+	"CUP_arifle_M16A4_GL",
 	"CUP_arifle_mk18_m203_black",
 	"CUP_arifle_G36A3_AG36",
 	"CUP_arifle_XM8_Carbine_GL",
@@ -868,6 +889,7 @@ private _itemWeaponGL =
 	"CUP_arifle_AKM_GL",
 	"CUP_arifle_AK103_GL_railed",
 	"CUP_arifle_OTS14_GROZA_762_GL",
+	"CUP_arifle_Sa58RIS2_gl",
 
 	//7.62x51mm
 	"CUP_arifle_DSA_SA58_OSW_M203",
@@ -890,6 +912,11 @@ private _itemWeaponGL =
 	"CUP_1Rnd_SMOKE_GP25_M",
 	"CUP_1Rnd_SmokeRed_GP25_M",
 	"CUP_1Rnd_SmokeGreen_GP25_M"
+];
+
+private _itemWeaponSFSL =
+[	
+	"CUP_lmg_m249_para_gl"
 ];
 
 private _itemMedic =
@@ -1204,11 +1231,11 @@ switch (true) do
 {
 	case (_unitRole == "ar") :
 	{
-		[arsenal, (_itemEquipment + _itemMod + _itemReflexSight + _itemWeaponAR + _itemWeaponMG + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemMod + _itemReflexSight + _itemWeaponAR + _itemWeaponMG + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 	case (_unitRole == "aar") :
 	{
-		[arsenal, (_itemEquipment + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 	case (_unitRole in _leaderRole) :
 	{
@@ -1244,7 +1271,7 @@ switch (true) do
 	};
 		case (_unitRole == "sfsl") :
 	{
-		[arsenal, (_itemEquipment + _itemWeaponLAT + _itemWeaponGL + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "sfmed") :
 	{
