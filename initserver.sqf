@@ -1,0 +1,3 @@
+
+SafestartisActive = true;
+publicVariable "SafestartisActive";

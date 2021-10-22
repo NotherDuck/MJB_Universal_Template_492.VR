@@ -1,0 +1,68 @@
+tmf_version[] = {1,1,0}; // DO NOT CHANGE THIS. This is the core version of the template that your mission was started with.
+enableDebugConsole = 1; // Allows the logged in admin to use the debug console from the escape page.
+enableTargetDebug = 1;
+respawnButton = 1; 
+
+class CfgDebriefing
+{
+	class Success
+	{
+		title = "Mission Success";
+		subtitle = "";
+		description = "";
+		// pictureBackground = "";
+		// picture = "";
+		// pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class Failed
+	{
+		title = "Mission Failed";
+		subtitle = "";
+		description = "";
+		// pictureBackground = "";
+		// picture = "";
+		// pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class CustomEnding1
+	{
+		title = "Custom Ending #1";
+		subtitle = "";
+		description = "*** Explanation for the debriefing page ***";
+		// pictureBackground = "";
+		// picture = "";
+		// pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
+
+// DO NOT REMOVE. Include the macros for custom loadouts.
+#include "loadouts\_macros.hpp"
+
+
+class CfgLoadouts
+{
+    class PLAYER_LOADOUT
+    {
+        displayName = "Example Player Loadout";
+        #include "loadouts\player_loadout.hpp"
+    };
+	class ENEMY_LOADOUT
+	{
+		displayName = "Example Enemy Loadout";
+		#include "loadouts\enemy_loadout.hpp"
+	};
+};
+
+
+class CfgDebriefingSections
+{
+	class tmf_adminlog
+	{
+		title = "TMF Log";
+		variable = "TMF_adminmenu_debrief";
+	};
+	class acex_killTracker
+	{
+		title = "ACEX Killed Events";
+		variable = "acex_killTracker_outputText";
+	};
+};
