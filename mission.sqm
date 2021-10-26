@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=115;
+		nextID=118;
 	};
 	class Camera
 	{
-		pos[]={3929.1936,20.613207,4344.3252};
-		dir[]={-0.2080231,-0.36940086,-0.90569776};
-		up[]={-0.082692415,0.92926913,-0.36003104};
-		aside[]={-0.97463083,2.6775524e-009,0.2238559};
+		pos[]={4075.8027,14.940174,4223.0439};
+		dir[]={-0.85342163,-0.3766118,-0.36032632};
+		up[]={-0.34695449,0.92637116,-0.14648895};
+		aside[]={-0.38896537,0,0.92125231};
 	};
 };
 binarizationWanted=0;
@@ -294,7 +294,7 @@ class CustomAttributes
 							"BOOL"
 						};
 					};
-					value=1;
+					value=0;
 				};
 			};
 		};
@@ -304,25 +304,6 @@ class CustomAttributes
 	{
 		name="TMF_ORBAT_Settings";
 		class Attribute0
-		{
-			property="TMF_ORBATTrackerCondition";
-			expression="false";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"STRING"
-						};
-					};
-					value="true";
-				};
-			};
-		};
-		class Attribute1
 		{
 			property="TMF_ORBATTracker";
 			expression="false";
@@ -338,6 +319,25 @@ class CustomAttributes
 						};
 					};
 					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="TMF_ORBATTrackerCondition";
+			expression="false";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"STRING"
+						};
+					};
+					value="true";
 				};
 			};
 		};
@@ -418,7 +418,7 @@ class CustomAttributes
 							"STRING"
 						};
 					};
-					value="[[""Blue Briefing"",[1],""briefing\briefing_blufor.sqf""],[""Red Briefing"",[0],""briefing\briefing_opfor.sqf""],[""Green Briefing"",[2],""briefing\briefing_grefor.sqf""]]";
+					value="[[""Blue Briefing"",[1],""briefing\briefing_blufor.sqf""],[""Red Briefing"",[0],""briefing\briefing_opfor.sqf""],[""Green Briefing"",[2],""briefing\briefing_grefor.sqf""],[""Admin Notes"",[1,2,0],""briefing/admin.sqf""]]";
 				};
 			};
 		};
@@ -117088,6 +117088,25 @@ class Mission
 			{
 				class Attribute0
 				{
+					property="TMF_Briefinglist";
+					expression="[_this,'TMF_Briefinglist',_value] call tmf_common_fnc_initGroupVar;";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="[3]";
+						};
+					};
+				};
+				class Attribute1
+				{
 					property="TMF_Channellist";
 					expression="[_this,'TMF_Channellist',_value] call tmf_common_fnc_initGroupVar;";
 					class Value
@@ -117105,7 +117124,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute1
+				class Attribute2
 				{
 					property="TMF_groupMarker";
 					expression="[_this,'TMF_groupMarker',_value] call tmf_common_fnc_initGroupVar;";
@@ -117124,7 +117143,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute2
+				class Attribute3
 				{
 					property="groupID";
 					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };                        ";
@@ -117143,7 +117162,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute3
+				class Attribute4
 				{
 					property="TMF_ChannellistLeader";
 					expression="[_this,'TMF_ChannellistLeader',_value] call tmf_common_fnc_initGroupVar;";
@@ -117162,7 +117181,7 @@ class Mission
 						};
 					};
 				};
-				class Attribute4
+				class Attribute5
 				{
 					property="TMF_OrbatParent";
 					expression="[_this,'TMF_OrbatParent',_value] call tmf_common_fnc_initGroupVar;";
@@ -117181,7 +117200,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=5;
+				nAttributes=6;
 			};
 		};
 		class Item161
