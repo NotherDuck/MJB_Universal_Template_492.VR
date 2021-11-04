@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=121;
+		nextID=127;
 	};
 	class Camera
 	{
-		pos[]={4336.5581,493.85645,4304.7017};
-		dir[]={-0.63062286,-0.77579951,0.021361083};
-		up[]={-0.77535462,0.63098145,0.02626355};
-		aside[]={0.033853393,-2.1750748e-007,0.99943173};
+		pos[]={3856.4895,30.191849,4316.8184};
+		dir[]={0.83200568,-0.46227142,0.30671731};
+		up[]={0.43373773,0.88673824,0.15989657};
+		aside[]={0.34589389,7.1013346e-008,-0.93827635};
 	};
 };
 binarizationWanted=0;
@@ -188,7 +188,7 @@ dlcs[]=
 randomSeed=8795498;
 class ScenarioData
 {
-	author="NotherDuck";
+	author="NotherDuck, MajorDanvers";
 	disabledAI=1;
 	respawn=1;
 	class Header
@@ -418,7 +418,7 @@ class CustomAttributes
 							"STRING"
 						};
 					};
-					value="[[""Blue Briefing"",[1],""briefing\briefing_blufor.sqf""],[""Red Briefing"",[0],""briefing\briefing_opfor.sqf""],[""Green Briefing"",[2],""briefing\briefing_grefor.sqf""],[""Admin Notes"",[1,2,0],""briefing/admin.sqf""]]";
+					value="[[""Blue Briefing"",[1],""briefing\briefing_blufor.sqf""],[""Red Briefing"",[0],""briefing\briefing_opfor.sqf""],[""Green Briefing"",[2],""briefing\briefing_grefor.sqf""],[""Admin Notes"",[1,2,0],""briefing\admin.sqf""]]";
 				};
 			};
 		};
@@ -1255,7 +1255,7 @@ class CustomAttributes
 										"STRING"
 									};
 								};
-								value="tmf_template";
+								value="RATS Mission";
 							};
 						};
 						class Item2
@@ -1269,7 +1269,7 @@ class CustomAttributes
 										"STRING"
 									};
 								};
-								value="by NotherDuck";
+								value="by NotherDuck, MajorDanvers";
 							};
 						};
 						class Item3
