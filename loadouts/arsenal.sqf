@@ -405,7 +405,7 @@ private _itemWeaponRifle =
 	"CUP_arifle_HK416_Black",
 	"CUP_arifle_M4A1_SOMMOD_black",
 	"CUP_Famas_F1_Rail",
-	"CUP_arifle_M16A4",
+	"CUP_arifle_M16A4_Grip",
 	"CUP_arifle_AK101_railed",
 	
 	//============================================================
