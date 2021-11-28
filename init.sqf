@@ -21,8 +21,6 @@ addMissionEventHandler ["OnUserAdminStateChanged", {
         [(compile preprocessfilelinenumbers "briefing\admin.sqf")] remoteExec ["call", _JIPAdmin];  
         ["Admin briefing granted."] remoteExec ["systemChat", _JIPAdmin];
       } else {  
-        ["Warning, admin briefing not found. Expected: MISSION_ROOT\briefing\admin.sqf"] remoteExec ["systemChat", _JIPAdmin];  
-      };  
-    };        
-  };    
+        ["Warning, admin briefing not found. Expected: MISSION_ROOT\briefing\admin.sqf"] remoteExec ["systemChat", _JIPAdmin]; };  
+  }; };    
 }];
