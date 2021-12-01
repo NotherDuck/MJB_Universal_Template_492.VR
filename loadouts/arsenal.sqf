@@ -146,7 +146,6 @@ private _itemEquipment =
 	"ItemWatch",
 	"Laserbatteries",
 	"ItemGPS",
-	"FirstAidKit",
 	
 	//Diwako
 	"diw_armor_plates_main_plate",
@@ -219,39 +218,6 @@ private _itemSpecial =
 	"ACRE_PRC152",
 	"ACRE_PRC117F"
 ];
-
-/* private _itemMedical = 
-[
-	//Bandages
-	"ACE_fieldDressing",
-	"ACE_elasticBandage",
-	"ACE_packingBandage",
-	"ACE_quikclot",
-	//Specialized Equipments
-	"ACE_splint",
-	"ACE_tourniquet"
-];
-
-private _itemMedicalAdv = 
-[
-	//Fluids
-	"ACE_bloodIV",
-	"ACE_bloodIV_250",
-	"ACE_bloodIV_500",
-	"ACE_plasmaIV",
-	"ACE_plasmaIV_250",
-	"ACE_plasmaIV_500",
-	"ACE_salineIV",
-	"ACE_salineIV_250",
-	"ACE_salineIV_500",
-	//Medications
-	"ACE_adenosine",
-	"ACE_epinephrine",
-	"ACE_morphine",
-	//Specialized Equipments
-	"ACE_personalAidKit",
-	"ACE_surgicalKit"
-]; */
 
 private _itemMod =
 [	
@@ -928,7 +894,6 @@ private _itemWeaponSFSL =
 private _itemMedic =
 [
 	//BIS
-	"Medikit",
 	"B_Carryall_oucamo"
 ];
 
@@ -1063,7 +1028,6 @@ private _itemTankCrew =
 	"CUP_V_PMC_CIRAS_Coyote_Veh",
 	"CUP_V_PMC_CIRAS_OD_Veh",
 	"ACRE_PRC148",
-	"FirstAidKit",
 	"SmokeShellBlue",
 	"H_HelmetCrew_I",
 	"U_B_CombatUniform_mcam_W",
@@ -1116,7 +1080,6 @@ private _itemHeloCrew =
 	"CUP_V_PMC_CIRAS_Coyote_Veh",
 	"CUP_V_PMC_CIRAS_OD_Veh",
 	"ACRE_PRC148",
-	"FirstAidKit",
 	"SmokeShellBlue",
 	"H_PilotHelmetHeli_B",
 	"WU_B_HeliPilotCoveralls",
@@ -1167,7 +1130,6 @@ private _itemAirCrew =
 	"ACE_IR_Strobe_Item",
 	"greenmag_item_speedloader",
 	"ACRE_PRC148",
-	"FirstAidKit",
 	"greenmag_ammo_9x19_basic_30Rnd",
 	"ACE_Chemlight_UltraHiOrange",
 	"SmokeShellOrange",
@@ -1207,6 +1169,47 @@ private _itemAirCrew =
 	"CUP_FR_NeckScarf4",
 	"CUP_FR_NeckScarf5"
 ];
+
+private _aceMedEnabled = (getLoadedModsInfo findIf {(_x  select 7) == "463939057"}); // Check if ACE Med loaded
+if (_aceMedEnabled > -1) then {
+private _itemMedical = 
+[
+	//Bandages
+	"ACE_fieldDressing",
+	"ACE_elasticBandage",
+	"ACE_packingBandage",
+	"ACE_quikclot",
+	//Specialized Equipments
+	"ACE_splint",
+	"ACE_tourniquet"
+];
+{_x append _itemMedical} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
+// Append ACE Med Items
+private _itemMedicalAdv = 
+[
+	//Fluids
+	"ACE_bloodIV",
+	"ACE_bloodIV_250",
+	"ACE_bloodIV_500",
+	"ACE_plasmaIV",
+	"ACE_plasmaIV_250",
+	"ACE_plasmaIV_500",
+	"ACE_salineIV",
+	"ACE_salineIV_250",
+	"ACE_salineIV_500",
+	//Medications
+	"ACE_adenosine",
+	"ACE_epinephrine",
+	"ACE_morphine",
+	//Specialized Equipments
+	"ACE_personalAidKit",
+	"ACE_surgicalKit"
+]; 
+_itemMedic append _itemMedicalAdv;
+} else { // Add base med items
+	{_x pushBack "FirstAidKit";} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
+	_itemMedic pushBack "Medikit";
+};
 
 //Add Existing Player Items
 {
