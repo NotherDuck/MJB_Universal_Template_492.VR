@@ -1170,8 +1170,8 @@ private _itemAirCrew =
 	"CUP_FR_NeckScarf5"
 ];
 
-private _aceMedEnabled = (getLoadedModsInfo findIf {(_x  select 7) == "463939057"}); // Check if ACE Med loaded
-if (_aceMedEnabled > -1) then {
+// Check if ACE Med loaded
+if (isClass(configFile >> "CfgPatches" >> "ace_medical_engine")) then { 
 private _itemMedical = 
 [
 	//Bandages
@@ -1181,7 +1181,10 @@ private _itemMedical =
 	"ACE_quikclot",
 	//Specialized Equipments
 	"ACE_splint",
-	"ACE_tourniquet"
+	"ACE_tourniquet",
+	//Rifleman Medications
+	"ACE_epinephrine",
+	"ACE_morphine"
 ];
 {_x append _itemMedical} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
 // Append ACE Med Items
@@ -1199,8 +1202,6 @@ private _itemMedicalAdv =
 	"ACE_salineIV_500",
 	//Medications
 	"ACE_adenosine",
-	"ACE_epinephrine",
-	"ACE_morphine",
 	//Specialized Equipments
 	"ACE_personalAidKit",
 	"ACE_surgicalKit"
