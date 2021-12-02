@@ -43,6 +43,7 @@
 //Variables
 private _unitRole = player getVariable ["tmf_assignGear_role",nil];
 private _leaderRole = ["tl","sl"];
+private _aceMedLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_engine"); //Store whether ace med is present
 
 arsenal = "building" createVehicleLocal [0,0,0];
 player setVariable ["startpos", getPosASL player];
@@ -1170,10 +1171,9 @@ private _itemAirCrew =
 	"CUP_FR_NeckScarf5"
 ];
 
-private _aceMedEnabled = (getLoadedModsInfo findIf {(_x  select 7) == "463939057"}); // Check if ACE Med loaded
-if (_aceMedEnabled > -1) then {
-private _itemMedical = 
-[
+if (_aceMedLoaded) then { //Check for ace med
+  private _itemMedical = 
+  [
 	//Bandages
 	"ACE_fieldDressing",
 	"ACE_elasticBandage",
@@ -1181,12 +1181,15 @@ private _itemMedical =
 	"ACE_quikclot",
 	//Specialized Equipments
 	"ACE_splint",
-	"ACE_tourniquet"
-];
-{_x append _itemMedical} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
-// Append ACE Med Items
-private _itemMedicalAdv = 
-[
+	"ACE_tourniquet",
+	//Rifleman Medications
+	"ACE_epinephrine",
+	"ACE_morphine"
+  ];
+  {_x append _itemMedical} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
+  // Append ACE Med Items
+  private _itemMedicalAdv = 
+  [
 	//Fluids
 	"ACE_bloodIV",
 	"ACE_bloodIV_250",
@@ -1199,13 +1202,11 @@ private _itemMedicalAdv =
 	"ACE_salineIV_500",
 	//Medications
 	"ACE_adenosine",
-	"ACE_epinephrine",
-	"ACE_morphine",
 	//Specialized Equipments
 	"ACE_personalAidKit",
 	"ACE_surgicalKit"
-]; 
-_itemMedic append _itemMedicalAdv;
+  ]; 
+  _itemMedic append _itemMedicalAdv;
 } else { // Add base med items
 	{_x pushBack "FirstAidKit";} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
 	_itemMedic pushBack "Medikit";
