@@ -1041,35 +1041,7 @@ private _itemTankCrew =
 	"ItemGPS",
 	"ItemCompass",
 	"ItemWatch",
-	"NVGoggles",
-	
-	//CUP
-	"CUP_G_ESS_BLK",
-	"CUP_G_ESS_BLK_Scarf_Face_Blk",
-	"CUP_G_ESS_BLK_Facewrap_Black",
-	"CUP_G_ESS_BLK_Scarf_Grn",
-	"CUP_G_ESS_BLK_Dark",
-	"CUP_G_ESS_BLK_Scarf_Face_Grn",
-	"CUP_PMC_Facewrap_Black",
-	"CUP_G_PMC_Facewrap_Black_Glasses_Dark",
-	"CUP_PMC_Facewrap_Tan",
-	"CUP_G_PMC_Facewrap_Tan_Glasses_Dark",
-	"CUP_PMC_Facewrap_Tropical",
-	"CUP_G_PMC_Facewrap_Tropical_Glasses_Dark",
-	"CUP_PMC_Facewrap_Winter",
-	"CUP_G_PMC_Facewrap_Winter_Glasses_Dark",
-	"CUP_G_Oakleys_Clr",
-	"CUP_G_Oakleys_Drk",
-	"CUP_G_Oakleys_Embr",
-	"CUP_G_Scarf_Face_Blk",
-	"CUP_G_Scarf_Face_Grn",
-	"CUP_G_Scarf_Face_Tan",
-	"CUP_G_Scarf_Face_White",
-	"CUP_FR_NeckScarf",
-	"CUP_FR_NeckScarf2",
-	"CUP_FR_NeckScarf3",
-	"CUP_FR_NeckScarf4",
-	"CUP_FR_NeckScarf5"
+	"NVGoggles"
 ];
 
 private _itemHeloCrew =
@@ -1092,35 +1064,7 @@ private _itemHeloCrew =
 	"ItemCompass",
 	"ItemWatch",
 	"NVGoggles",
-	"G_aviator",
-
-	//CUP
-	"CUP_G_ESS_BLK",
-	"CUP_G_ESS_BLK_Scarf_Face_Blk",
-	"CUP_G_ESS_BLK_Facewrap_Black",
-	"CUP_G_ESS_BLK_Scarf_Grn",
-	"CUP_G_ESS_BLK_Dark",
-	"CUP_G_ESS_BLK_Scarf_Face_Grn",
-	"CUP_PMC_Facewrap_Black",
-	"CUP_G_PMC_Facewrap_Black_Glasses_Dark",
-	"CUP_PMC_Facewrap_Tan",
-	"CUP_G_PMC_Facewrap_Tan_Glasses_Dark",
-	"CUP_PMC_Facewrap_Tropical",
-	"CUP_G_PMC_Facewrap_Tropical_Glasses_Dark",
-	"CUP_PMC_Facewrap_Winter",
-	"CUP_G_PMC_Facewrap_Winter_Glasses_Dark",
-	"CUP_G_Oakleys_Clr",
-	"CUP_G_Oakleys_Drk",
-	"CUP_G_Oakleys_Embr",
-	"CUP_G_Scarf_Face_Blk",
-	"CUP_G_Scarf_Face_Grn",
-	"CUP_G_Scarf_Face_Tan",
-	"CUP_G_Scarf_Face_White",
-	"CUP_FR_NeckScarf",
-	"CUP_FR_NeckScarf2",
-	"CUP_FR_NeckScarf3",
-	"CUP_FR_NeckScarf4",
-	"CUP_FR_NeckScarf5"
+	"G_aviator"
 ];
 
 private _itemAirCrew =
@@ -1140,35 +1084,7 @@ private _itemAirCrew =
 	"ItemGPS",
 	"ItemCompass",
 	"ItemWatch",
-	"G_aviator",
-
-	//CUP
-	"CUP_G_ESS_BLK",
-	"CUP_G_ESS_BLK_Scarf_Face_Blk",
-	"CUP_G_ESS_BLK_Facewrap_Black",
-	"CUP_G_ESS_BLK_Scarf_Grn",
-	"CUP_G_ESS_BLK_Dark",
-	"CUP_G_ESS_BLK_Scarf_Face_Grn",
-	"CUP_PMC_Facewrap_Black",
-	"CUP_G_PMC_Facewrap_Black_Glasses_Dark",
-	"CUP_PMC_Facewrap_Tan",
-	"CUP_G_PMC_Facewrap_Tan_Glasses_Dark",
-	"CUP_PMC_Facewrap_Tropical",
-	"CUP_G_PMC_Facewrap_Tropical_Glasses_Dark",
-	"CUP_PMC_Facewrap_Winter",
-	"CUP_G_PMC_Facewrap_Winter_Glasses_Dark",
-	"CUP_G_Oakleys_Clr",
-	"CUP_G_Oakleys_Drk",
-	"CUP_G_Oakleys_Embr",
-	"CUP_G_Scarf_Face_Blk",
-	"CUP_G_Scarf_Face_Grn",
-	"CUP_G_Scarf_Face_Tan",
-	"CUP_G_Scarf_Face_White",
-	"CUP_FR_NeckScarf",
-	"CUP_FR_NeckScarf2",
-	"CUP_FR_NeckScarf3",
-	"CUP_FR_NeckScarf4",
-	"CUP_FR_NeckScarf5"
+	"G_aviator"
 ];
 
 if (_aceMedLoaded) then { //Check for ace med
