@@ -229,7 +229,6 @@ private _itemMod =
 	"optic_arco_blk_F",
 	"optic_hamr",
 	"optic_mrco",
-	"optic_ERCO_blk_F",
 
 	//CUP Magnified Sights
 	"cup_optic_aimm_microt1_blk",
