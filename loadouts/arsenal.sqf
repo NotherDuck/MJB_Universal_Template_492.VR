@@ -1169,6 +1169,7 @@ if (_hasContact) then {
 };
 
 //Add Existing Player Items
+waitUntil { !isNull player }; // should prevent FAKs/Medikits from adding when ACE enabled.
 private _exWeap = weaponsItems player; // Weapons, attachments, loaded mags/ub
 for "_y" from 0 to (count _exWeap - 1) do {
   {
