@@ -1127,23 +1127,60 @@ if (_aceMedLoaded) then { //Check for ace med
 	_itemMedic pushBack "Medikit";
 };
 
+private _ownedDLCs = getDLCs 1; // DLC check, Credit to MajorDanvers
+private _hasApex = 395180 in _ownedDLCs;
+private _hasContact = 1021790 in _ownedDLCs;
+
+if (_hasApex) then {
+	_itemsEquipment append [
+		"U_I_C_Soldier_Bandit_3_F",
+		"U_I_C_Soldier_Para_2_F",
+		"U_I_C_Soldier_Para_3_F",
+		"U_I_C_Soldier_Para_4_F",
+		"U_I_C_Soldier_Para_1_F",
+		
+		"H_HelmetB_TI_tna_F",
+		"U_I_C_Soldier_Camo_F"
+	];
+	
+	_itemFacewear append [		
+		"G_Balaclava_TI_blk_F",
+		"G_Balaclava_TI_G_blk_F"
+	];
+	
+	_itemMod append [
+		"optic_ERCO_blk_F"
+	];
+};
+
+if (_hasContact) then {
+	_itemsEquipment append [		
+		"U_O_R_Gorka_01_black_F",		
+		"G_Blindfold_01_black_F"
+	];
+	
+	_itemLeaderEquipment append [
+		"H_Beret_EAF_01_F"
+	];
+	
+	_itemAirCrew append [
+		"U_I_E_Uniform_01_coveralls_F"
+	];
+};
+
 //Add Existing Player Items
+waitUntil { !isNull player }; // should prevent FAKs/Medikits from adding when ACE enabled.
+private _exWeap = weaponsItems player; // Weapons, attachments, loaded mags/ub
+for "_y" from 0 to (count _exWeap - 1) do {
+  {
+    if (count _x == 2) then { _itemsEquipment pushBackUnique (_x # 0);}
+	else { _itemsEquipment pushBackUnique _x;};
+  } forEach (_exWeap # _y);
+};
+  
 {
-    _itemEquipment pushBackUnique _x;
-}forEach (primaryWeaponItems player);
-
-{
-    _itemEquipment pushBackUnique _x;
-}forEach (handgunItems player);
-
-_itemEquipment pushBack uniform player;
-_itemEquipment pushBack vest player;
-_itemEquipment pushBack backpack player;
-_itemEquipment pushBack headgear player;
-
-{
-    _itemEquipment pushBackUnique _x;
-} forEach (assignedItems player);
+    _itemsEquipment pushBackUnique _x;
+} forEach (assignedItems player + itemsWithMagazines player + [uniform player, vest player, backpack player, headgear player]); // All other equipment
 
 private _tarkovuniforms = [];
 for [{_i = 2}, {_i < 623}, {_i = _i + 24}] do
