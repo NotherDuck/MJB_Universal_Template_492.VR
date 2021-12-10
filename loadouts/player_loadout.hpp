@@ -6,6 +6,9 @@
 		- Removed all ACRE radios
 		- Added tracers to Leader and AR roles
 	Edited by Beagle on 2021-08-24
+	Edited by Alien314 on 2021-12-10
+	  Changenotes: 
+		- Added code to initialize players/respawns, disabling base game stamina and adding APS plates and actions.	    
 */
 
 // Weaponless Baseclass
@@ -145,7 +148,7 @@ class basetrooper
 	backpackItems[] = {};
 	
 	// This is executed after the unit init is complete. Argument: _this = _unit.
-	code = "";
+	code = "[_this] spawn { params [""_player""]; waitUntil {isPlayer _player}; _player enableStamina false; _player enableFatigue false; _player call diw_armor_plates_main_fnc_fillVestWithPlates; _player call diw_armor_plates_main_fnc_addActionsToUnit; _player call diw_armor_plates_main_fnc_addPlayerHoldActions;}";
 };
 
 
