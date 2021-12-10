@@ -70,6 +70,11 @@ private _itemEquipment =
 	//Vests
 	//============================================================
 	"V_PlateCarrier2_blk",
+	"V_PlateCarrier2_rgr_noflag_F",
+	"V_PlateCarrier1_blk",
+	"V_PlateCarrier1_rgr_noflag_F",
+	"CUP_V_CZ_NPP2006_nk_black",
+	"CUP_V_CZ_NPP2006_nk_vz95",
 	
 	//============================================================
 	//Backpacks
@@ -327,6 +332,7 @@ private _itemWeaponPistol =
 	"greenmag_ammo_9x21_basic_30Rnd",
 	"greenmag_ammo_45ACP_basic_30Rnd",
 	"greenmag_ammo_9x18_basic_30Rnd",
+	"greenmag_ammo_762x25_ball_30Rnd",
 
 	//Attachments
 	"cup_acc_mk23_lam_f",
@@ -351,6 +357,8 @@ private _itemLeaderEquipment =
 	"optic_mrd_black",
 	"muzzle_snds_l",
 	"cup_muzzle_snds_mk23",
+	
+	"greenmag_ammo_50AE_ball_30Rnd", // deagle rounds
 
 	//Hats
 	"H_Beret_blk",
