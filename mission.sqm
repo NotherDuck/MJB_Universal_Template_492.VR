@@ -418,7 +418,7 @@ class CustomAttributes
 							"STRING"
 						};
 					};
-					value="[[""Blue Briefing"",[1],""briefing\briefing_blufor.sqf""],[""Red Briefing"",[0],""briefing\briefing_opfor.sqf""],[""Green Briefing"",[2],""briefing\briefing_grefor.sqf""],[""Admin Notes"",[1,2,0],""briefing\admin.sqf""]]";
+					value="[[""Blue Briefing"",[1],""briefing\briefing_blufor.sqf""],[""Red Briefing"",[0],""briefing\briefing_opfor.sqf""],[""Green Briefing"",[2],""briefing\briefing_grefor.sqf""]]";
 				};
 			};
 		};
