@@ -1132,7 +1132,7 @@ private _hasApex = 395180 in _ownedDLCs;
 private _hasContact = 1021790 in _ownedDLCs;
 
 if (_hasApex) then {
-	_itemsEquipment append [
+	_itemEquipment append [
 		"U_I_C_Soldier_Bandit_3_F",
 		"U_I_C_Soldier_Para_2_F",
 		"U_I_C_Soldier_Para_3_F",
@@ -1154,7 +1154,7 @@ if (_hasApex) then {
 };
 
 if (_hasContact) then {
-	_itemsEquipment append [		
+	_itemEquipment append [		
 		"U_O_R_Gorka_01_black_F",		
 		"G_Blindfold_01_black_F"
 	];
@@ -1173,13 +1173,13 @@ waitUntil { !isNull player }; // should prevent FAKs/Medikits from adding when A
 private _exWeap = weaponsItems player; // Weapons, attachments, loaded mags/ub
 for "_y" from 0 to (count _exWeap - 1) do {
   {
-    if (count _x == 2) then { _itemsEquipment pushBackUnique (_x # 0);}
-	else { _itemsEquipment pushBackUnique _x;};
+    if (count _x == 2) then { _itemEquipment pushBackUnique (_x # 0);}
+	else { _itemEquipment pushBackUnique _x;};
   } forEach (_exWeap # _y);
 };
   
 {
-    _itemsEquipment pushBackUnique _x;
+    _itemEquipment pushBackUnique _x;
 } forEach (assignedItems player + itemsWithMagazines player + [uniform player, vest player, backpack player, headgear player]); // All other equipment
 
 private _tarkovuniforms = [];
