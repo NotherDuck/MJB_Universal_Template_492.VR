@@ -22,10 +22,3 @@ addMissionEventHandler ["OnUserAdminStateChanged", {    // Admin JIP handler
         ["Warning, admin briefing not found. Expected: MISSION_ROOT\briefing\admin.sqf"] remoteExec ["systemChat", _JIPAdmin]; };  
   }; };    
 }];
-
-bef_ttap = diw_armor_plates_main_timeToAddPlate; // Credit: MajorDanvers for this block, reduces plating time during safestart
-waitUntil { time > 0 }; [ {diw_armor_plates_main_timeToAddPlate = 0.5;} ] remoteExec ["call"];
-[ {!([] call TMF_safestart_fnc_isActive)},
-  { [bef_ttap, {diw_armor_plates_main_timeToAddPlate = _this;} ] remoteExec ["call"]; bef_ttap = nil;
-    [player] remoteExec ["diw_armor_plates_main_fnc_fillVestWithPlates"];} // Fill plates in-case anyone forgot
-] call CBA_fnc_waitUntilAndExecute;

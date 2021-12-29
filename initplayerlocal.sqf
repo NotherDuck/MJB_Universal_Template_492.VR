@@ -20,3 +20,14 @@ if(secondaryWeapon player != "") then {
 if(handgunWeapon player != "") then {
   player addItem (handgunMagazine player select 0);
 };
+
+bef_ttap = diw_armor_plates_main_timeToAddPlate; // Credit: MajorDanvers for this block, reduces plating time during safestart
+waitUntil { time > 0 };
+if ([] call TMF_safestart_fnc_isActive) then {
+  diw_armor_plates_main_timeToAddPlate = 0.5;
+  [ {!([] call TMF_safestart_fnc_isActive)},{
+    diw_armor_plates_main_timeToAddPlate = bef_ttap;
+    bef_ttap = nil;
+    player call diw_armor_plates_main_fnc_fillVestWithPlates; // Fill plates in-case anyone forgot
+  } ] call CBA_fnc_waitUntilAndExecute;
+};
