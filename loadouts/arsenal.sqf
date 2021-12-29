@@ -253,6 +253,7 @@ private _itemMod =
 	"CUP_muzzle_snds_G36_black",
 	"CUP_muzzle_snds_FAMAS",
 	"CUP_muzzle_snds_M16",
+	"muzzle_snds_m", // F2000/mk20 only fits this...
 	"CUP_muzzle_TGPA",
 	"CUP_muzzle_snds_KZRZP_AK545",
 	"CUP_muzzle_snds_KZRZP_AK762",
@@ -449,7 +450,8 @@ private _itemWeaponAmmo =
 	//============================================================
 	//Magazines
 	"CUP_30Rnd_545x39_Fort224_M",
-	"CUP_30Rnd_545x39_AK74M_railed",
+	"CUP_30Rnd_545x39_AK_M",
+	"CUP_30Rnd_545x39_AK74M_M",
 
 	//Loose ammo
 	"greenmag_ammo_545x39_basic_60Rnd",
@@ -559,6 +561,7 @@ private _itemWeaponHighCapAmmo =
 	"CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M",
 	"CUP_45Rnd_Sa58_M",
 	"CUP_45Rnd_Sa58_M_TracerY",
+	"CUP_75Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M",
 
 	//============================================================
 	//7.62x51mm
@@ -614,10 +617,12 @@ private _itemWeaponCQB =
 	"CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M",
 
 	//Shotguns
-	"6Rnd_12Gauge_Pellets",
 	"CUP_5Rnd_B_Saiga12_Buck_00",
+	"CUP_5Rnd_B_Saiga12_Slug",
 	"CUP_12Rnd_B_Saiga12_Buck_00",
+	"CUP_12Rnd_B_Saiga12_Slug",
 	"CUP_8Rnd_12Gauge_Pellets_No00_Buck",
+	"CUP_8Rnd_12Gauge_Slug",
 
 	//============================================================
 	//Loose ammo
