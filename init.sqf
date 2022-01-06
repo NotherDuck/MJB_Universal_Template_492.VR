@@ -5,6 +5,7 @@
     if (isNil "_type" || {_roundsLeft > 0}) exitWith {};
     (_type call BIS_fnc_ItemType) params ["_magType", "_magLoadedWith"];
     if (_magType != "Magazine" || {!(_magLoadedWith in ["Bullet", "ShotgunShell"])}) exitWith {};
+    [_unit, _type, 0] call CBA_fnc_removeMagazine;
     _unit addMagazine _type;
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
