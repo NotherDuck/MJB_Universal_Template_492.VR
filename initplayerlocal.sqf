@@ -22,12 +22,14 @@ if(handgunWeapon player != "") then {
 };
 
 bef_ttap = diw_armor_plates_main_timeToAddPlate; // Credit: MajorDanvers for this block, reduces plating time during safestart
-waitUntil { time > 0 };
-if ([] call TMF_safestart_fnc_isActive) then {
-  diw_armor_plates_main_timeToAddPlate = 0.5;
-  [ {!([] call TMF_safestart_fnc_isActive)},{
+private _plateMachine = [[player], true] call CBA_statemachine_fnc_create;
+[_plateMachine, {}, {
+    diw_armor_plates_main_timeToAddPlate = 0.5;}, {}, "fast"] call CBA_statemachine_fnc_addState;
+[_plateMachine, {}, {
     diw_armor_plates_main_timeToAddPlate = bef_ttap;
-    bef_ttap = nil;
-    player call diw_armor_plates_main_fnc_fillVestWithPlates; // Fill plates in-case anyone forgot
-  } ] call CBA_fnc_waitUntilAndExecute;
-};
+	if (time <1290) then {
+      player call diw_armor_plates_main_fnc_fillVestWithPlates; // Fill plates in-case anyone forgot
+	};
+}, {}, "slow"] call CBA_statemachine_fnc_addState;
+[_plateMachine, "fast", "slow", {!([] call TMF_safestart_fnc_isActive)}, {}, "Safestart deactivated"] call CBA_statemachine_fnc_addTransition;
+[_plateMachine, "slow", "fast", {[] call TMF_safestart_fnc_isActive}, {}, "Safestart active"] call CBA_statemachine_fnc_addTransition;
