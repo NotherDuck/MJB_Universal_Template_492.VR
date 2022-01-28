@@ -148,7 +148,7 @@ class basetrooper
 	backpackItems[] = {};
 	
 	// This is executed after the unit init is complete. Argument: _this = _unit.
-	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; _player enableStamina false; _player enableFatigue false; if(isClass(configfile >> ""CfgPatches"" >> ""fatigue_core"")) then {_player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; _player setStamina 60; _player allowSprint true; _player call diw_armor_plates_main_fnc_fillVestWithPlates; _player call diw_armor_plates_main_fnc_addActionsToUnit; _player call diw_armor_plates_main_fnc_addPlayerHoldActions;}";
+	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; _player enableStamina false; _player enableFatigue false; if(isClass(configfile >> ""CfgPatches"" >> ""fatigue_core"")) do {_player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; _player setStamina 60; _player allowSprint true; _player call diw_armor_plates_main_fnc_fillVestWithPlates; _player call diw_armor_plates_main_fnc_addActionsToUnit; _player call diw_armor_plates_main_fnc_addPlayerHoldActions;}";
 };
 
 
@@ -453,9 +453,9 @@ class sfmed : cls
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki"
-		//"rhsusf_plateframe_medic"
-		//"rhsusf_mbav_mg"
+		"CUP_V_B_Ciras_Khaki",
+		"rhsusf_plateframe_medic",
+		"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -513,9 +513,9 @@ class sfmat : mat
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 		};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki2"
-		//"rhsusf_plateframe_rifleman"
-		//"rhsusf_mbav_mg"
+		"CUP_V_B_Ciras_Khaki2",
+		"rhsusf_plateframe_rifleman",
+		"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -557,9 +557,9 @@ class sfar : ar
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki2"
-		//"rhsusf_plateframe_machinegunner"
-		//"rhsusf_mbav_mg"
+		"CUP_V_B_Ciras_Khaki2",
+		"rhsusf_plateframe_machinegunner",
+		"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -679,8 +679,8 @@ class crew : basetrooper
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
 	vest[] = {
-		"CUP_V_PMC_CIRAS_Khaki_Veh"
-		//"rhsusf_mbav_mg"
+		"CUP_V_PMC_CIRAS_Khaki_Veh",
+		"rhsusf_mbav_mg"
 	};
 	backpack[] = {};
 	primaryWeapon[] =
@@ -715,8 +715,8 @@ class helocrew : crew
 		"H_PilotHelmetHeli_B"
 	};
 	vest[] = {
-		"CUP_V_PMC_CIRAS_Coyote_Veh"
-		//"rhsusf_mbav_mg"
+		"CUP_V_PMC_CIRAS_Coyote_Veh",
+		"rhsusf_mbav_mg"
 	};
 };
 
