@@ -1196,12 +1196,13 @@ for "_y" from 0 to (count _exWeap - 1) do {
 } forEach (assignedItems player + itemsWithMagazines player + [uniform player, vest player, backpack player, headgear player]); // All other equipment
 
 private _tarkovuniforms = [];
-for [{_i = 2}, {_i < 623}, {_i = _i + 24}] do
-{
-	for "_j" from (_i) to (_i + 21) do 
-	{
-    _tarkovuniforms pushback ("Tarkov_Uniforms_" + str _j);
-	};
+private _whiteTexBugged = [51]; // Beltstaff shirt
+for [{_i = 3}, {_i < 623}, {_i = _i + 24}] do // skips Beltstaff pants
+{   
+  if ((_whiteTexBugged findIf {_i == _x}) == -1) then {
+    for "_j" from (_i) to (_i + 21) do {	   
+      _tarkovuniforms pushback ("Tarkov_Uniforms_" + str _j);
+    };  };
 };
 
 //Match unitrole name with the classnames in loadout.
