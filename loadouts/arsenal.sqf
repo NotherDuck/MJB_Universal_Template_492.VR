@@ -1195,7 +1195,7 @@ for "_y" from 0 to (count _exWeap - 1) do {
     _itemEquipment pushBackUnique _x;
 } forEach (assignedItems player + itemsWithMagazines player + [uniform player, vest player, backpack player, headgear player]); // All other equipment
 
-private _tarkovuniforms = [];
+private _tarkovuniforms = ["Tarkov_Uniforms_2"]; 
 private _whiteTexBugged = [51]; // Beltstaff shirt
 for [{_i = 3}, {_i < 623}, {_i = _i + 24}] do // skips Beltstaff pants
 {   
