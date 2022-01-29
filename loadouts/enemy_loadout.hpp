@@ -89,7 +89,7 @@ class baseMan
 	backpackItems[] = {};
 	
 	// This is executed after the unit init is complete. Argument: _this = _unit.
-	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; _player enableStamina false; _player enableFatigue false; if(isClass(configfile >> ""CfgPatches"" >> ""fatigue_core"")) do {_player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; _player setStamina 60; _player allowSprint true; _player call diw_armor_plates_main_fnc_fillVestWithPlates; _player call diw_armor_plates_main_fnc_addActionsToUnit; _player call diw_armor_plates_main_fnc_addPlayerHoldActions;}";
+	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; _player enableStamina false; _player enableFatigue false; if(isClass(configfile >> ""CfgPatches"" >> ""fatigue_core"")) then {_player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; _player setStamina 60; _player allowSprint true; _player call diw_armor_plates_main_fnc_fillVestWithPlates; _player call diw_armor_plates_main_fnc_addActionsToUnit; _player call diw_armor_plates_main_fnc_addPlayerHoldActions;}";
 };
 
 //Since this a loadout used by enemies only - we don't need to define a bunch of different classes, roles such as AAR, Team Leader, and etc are redundant.
