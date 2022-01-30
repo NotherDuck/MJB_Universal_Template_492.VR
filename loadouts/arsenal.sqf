@@ -48,6 +48,21 @@
 			- More backpack colors
 			- M110 SASS and M14 EBR for sharpshooters
 			- TAR-21 for vanilla troopers
+	* v2.1a - 2022-01-30:
+                        - Left most CUP AR-pattern rifles for GL roles, some might prefer the holo dot gl sight
+			- Prioritized model quality and variety when removing/replacing guns, CUP has nicer wood furniture usually.
+			- Added RHS disposables and RPG-7 with similar AT strength rockets
+			- ACE Vector and RHS Binocs
+			- Couple RHSGREF camos
+			- Winter variable to enable winter camo gear, these are currently weaker than our normal gear
+			- Added RHS rifles to Sharpshooter and Sniper
+			- Replaced CUP MP7 and added PP2000 and M590 in CQB weapons
+			- Added M145 optic and a couple RHS AR options to ARs
+			- Gave SF some vests from the pre-nuke arsenal, RHS AS Val, and a special pistol
+			- Gave helo and tank crews pre-nuke vests (sorry air ;-;)
+			- Blyat
+			- Beltstaff yeeted
+			- Added 20 round 9x39 mag and corrected 9x39 ammo box class name to ball
 */
 
 //Variables
@@ -55,7 +70,7 @@ private _unitRole = player getVariable ["tmf_assignGear_role",nil];
 private _leaderRole = ["tl","sl"];
 private _aceMedLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_engine"); //Store whether ace med is present
 
- private _winter = false; // true to enable winter camo
+private _winter = false; // true to enable winter camo
 
 arsenal = "building" createVehicleLocal [0,0,0];
 player setVariable ["startpos", getPosASL player];
@@ -942,6 +957,9 @@ private _itemWeaponSharpshooter =
 	"rhs_weap_sr25",
 
 	//7.62x54mmR
+	"CUP_srifle_SVD",
+	"CUP_srifle_SVD_top_rail",
+	
 	"rhs_weap_svds",
 	"rhs_weap_svdp_npz",
 
@@ -1122,7 +1140,7 @@ private _itemWeaponLAT =
 	"CUP_launch_M72A6",
 	"CUP_launch_RPG26",
 	"rhs_weap_rpg75", // Not much better than m72s in the configs
-	"rhs_weap_M136", // 
+	"rhs_weap_M136", // HEAT
 	"rhs_weap_M136_hedp", // Not great for AT
 	"rhs_weap_M136_hp", // High Penetration
 	
@@ -1138,19 +1156,19 @@ private _itemWeaponLAT =
 private _itemAmmoLAT = 
 [
 	//RPG Rockets (Uncomment desired rockets)
-	// "CUP_OG7_M", HEfrag
+	// "CUP_OG7_M", //HEfrag
 	// "CUP_PG7V_M", 
-	// "CUP_PG7VL_M", High pen
+	// "CUP_PG7VL_M", // High pen
 	// "CUP_PG7VM_M",
-	// "CUP_PG7VR_M", Very High Pen
-	// "CUP_TBG7V_M", HEdeath
+	// "CUP_PG7VR_M", // Very High Pen Tandem
+	// "CUP_TBG7V_M", // HEdeath
 	
 	// "rhs_rpg7_OG7V_mag",
 	// "rhs_rpg7_PG7V_mag",
-	// "rhs_rpg7_PG7VL_mag", High pen
-	 "rhs_rpg7_PG7VM_mag"//,
-	// "rhs_rpg7_PG7VR_mag", Very High Pen
-	// "rhs_rpg7_PG7VS_mag",
+	 "rhs_rpg7_PG7VL_mag", // High pen
+	 "rhs_rpg7_PG7VM_mag", // 
+	// "rhs_rpg7_PG7VR_mag", // Very High Pen Tandem
+	 "rhs_rpg7_PG7VS_mag"//, // Between VM and VL (should be at least)
 	// "rhs_rpg7_TBG7V_mag",
 	// "rhs_rpg7_type69_airburst_mag"
 ];
@@ -1316,8 +1334,8 @@ private _itemTankCrew =
 	"ACE_MapTools",
 	"NVGoggles",
 	"rhsgref_6b23_khaki",
-    "rhsusf_mbav_mg",
-    "rhsusf_oakley_goggles_blk"
+        "rhsusf_mbav_mg",
+        "rhsusf_oakley_goggles_blk"
 ];
 
 private _itemHeloCrew =
@@ -1511,7 +1529,7 @@ switch (true) do
 	};
 		case (_unitRole == "lat") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "sniper") :
 	{
@@ -1523,19 +1541,19 @@ switch (true) do
 	};
 		case (_unitRole == "sfsl") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "sfmed") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "sfmat") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponMAT + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponMAT + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "sfar") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 	case (_unitRole == "ceng") :
 	{
