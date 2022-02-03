@@ -365,8 +365,6 @@ private _itemMod =
 	//Dovetail (Ak Sights)
 	"CUP_optic_pechenegscope",
 	
-	"rhs_acc_1p29",
-	
 	//RHS Magnified Sights
 	"rhsusf_acc_g33_t1",
 	"rhsusf_acc_g33_xps3",
