@@ -8,7 +8,9 @@
 	Edited by Beagle on 2021-08-24
 	Edited by Alien314 on 2021-12-10
 	  Changenotes: 
-		- Added code to initialize players/respawns, disabling base game stamina and adding APS plates and actions.	    
+		- Added code to initialize players/respawns, disabling base game stamina and adding APS plates and actions.
+        - 2022-02-02: Uncommented RHS vests for SF	
+        - Switched default rifle and TL weapons for RHS ones		
 */
 
 // Weaponless Baseclass
@@ -148,7 +150,8 @@ class basetrooper
 	backpackItems[] = {};
 	
 	// This is executed after the unit init is complete. Argument: _this = _unit.
-	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; _player enableStamina false; _player enableFatigue false; if(isClass(configfile >> ""CfgPatches"" >> ""fatigue_core"")) then {_player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; _player setStamina 60; _player allowSprint true; _player call diw_armor_plates_main_fnc_fillVestWithPlates; _player call diw_armor_plates_main_fnc_addActionsToUnit; _player call diw_armor_plates_main_fnc_addPlayerHoldActions;}";
+	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; _player enableStamina false; _player enableFatigue false; if(isClass(configfile >> ""CfgPatches"" >> ""fatigue_core"")) then {_player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; _player setStamina 60; _player allowSprint true; _player call diw_armor_plates_main_fnc_fillVestWithPlates; _player call diw_armor_plates_main_fnc_addActionsToUnit; _player call diw_armor_plates_main_fnc_addPlayerHoldActions;}"; /*
+	Sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
 };
 
 
@@ -156,10 +159,13 @@ class r : basetrooper
 {
 	displayName = "Rifletrooper";
 	primaryWeapon[] = {
-		"CUP_arifle_HK416_Black"
+		"rhs_weap_hk416d145"
 	};
 	scope[] = {
 		"optic_hamr"
+	};
+	bipod[] = {
+		"rhsusf_acc_rvg_blk"
 	};
 	attachment[] = {
 		"CUP_acc_ANPEQ_15_Flashlight_Black_L"
@@ -192,6 +198,7 @@ class ar : basetrooper
 	scope[] = {
 		"optic_hamr"
 	};
+	bipod[] = {};
 	silencer[] = {
 		"CUP_muzzle_snds_M16"	
 	};
@@ -235,6 +242,7 @@ class sniper : basetrooper
 	scope[] = {
 		"CUP_optic_LeupoldMk4_25x50_LRT"
 	};
+	bipod[] = {};
 	silencer[] = {
 		"CUP_muzzle_mfsup_Suppressor_M107_Black"	
 	};
@@ -272,7 +280,7 @@ class tl : r
 {
 	displayName = "Team Leader";
 	primaryWeapon[] = {
-		"CUP_arifle_ACRC_EGLM_blk_556",
+		"rhs_weap_mk18_m320",
 	};
 	attachment[] = {
 		"CUP_acc_llm_black"
