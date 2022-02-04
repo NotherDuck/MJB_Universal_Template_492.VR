@@ -63,9 +63,11 @@
 			- Blyat
 			- Beltstaff yeeted (un-yeeted non-bugged shirts)
 			- Added 20 round 9x39 mag and corrected 9x39 ammo box class name to ball
-			- 2022-02-02:
+		- 2022-02-02:
 			- Gave up trying to limit size and added a ton more weapons
 			- Removed a few redundancies
+		-2022-02-04:
+			- Scav uniforms
 */
 
 //Variables
@@ -363,11 +365,9 @@ private _itemMod =
 	"cup_optic_g33_hws_blk",
 
 	//Dovetail (Ak Sights)
-	"CUP_optic_pechenegscope",
+	"CUP_optic_pechenegscope", // 2.8x
 	
-	//RHS Magnified Sights
-	"rhsusf_acc_g33_t1",
-	"rhsusf_acc_g33_xps3",
+	"rhs_acc_1p78", // 2x
 
 	//Others
 	//============================================================
@@ -1579,6 +1579,7 @@ for [{_i = 2}, {_i < 623}, {_i = _i + 24}] do // skips Beltstaff pants
   { if ((_whiteTexBugged findIf {_j == _x}) == -1) then {
     _tarkovuniforms pushback ("Tarkov_Uniforms_" + str _j); }; };
 };
+for "_i" from (1) to (49) do {  _tarkovuniforms pushback ("Tarkov_Uniforms_Scavs_" + str _i); };
 
 //Match unitrole name with the classnames in loadout.
 switch (true) do 

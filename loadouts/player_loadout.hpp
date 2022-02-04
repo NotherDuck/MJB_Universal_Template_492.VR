@@ -418,7 +418,8 @@ class sfsl : sl
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki2"
+		"rhsusf_plateframe_teamleader"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -461,9 +462,8 @@ class sfmed : cls
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki",
-		"rhsusf_plateframe_medic",
-		"rhsusf_mbav_mg"
+		"rhsusf_plateframe_medic"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -521,9 +521,8 @@ class sfmat : mat
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 		};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki2",
-		"rhsusf_plateframe_rifleman",
-		"rhsusf_mbav_mg"
+		"rhsusf_plateframe_rifleman"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -565,9 +564,8 @@ class sfar : ar
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki2",
-		"rhsusf_plateframe_machinegunner",
-		"rhsusf_mbav_mg"
+		"rhsusf_plateframe_machinegunner"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -624,7 +622,8 @@ class ceng : basetrooper
 		"H_HelmetSpecB_Sand"
 	};
 	vest[] = {
-		"CUP_V_MBSS_PACA_Tan"
+		"rhsusf_mbav_mg"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"B_Bergen_mcamo_F"
@@ -687,8 +686,8 @@ class crew : basetrooper
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
 	vest[] = {
-		"CUP_V_PMC_CIRAS_Khaki_Veh",
-		"rhsusf_mbav_mg"
+		"rhsgref_6b23_khaki"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {};
 	primaryWeapon[] =
@@ -723,8 +722,8 @@ class helocrew : crew
 		"H_PilotHelmetHeli_B"
 	};
 	vest[] = {
-		"CUP_V_PMC_CIRAS_Coyote_Veh",
-		"rhsusf_mbav_mg"
+		"rhsusf_mbav_light"
+		//"rhsusf_mbav_mg"
 	};
 };
 
