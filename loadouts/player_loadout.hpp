@@ -257,8 +257,8 @@ class mmg : ar
 		"B_Carryall_cbr"
 	};
 	backpackItems[] = {
-		LIST_4("diw_armor_plates_main_plate"),
-		LIST_5("FirstAidKit"),
+		LIST_3("diw_armor_plates_main_plate"),
+		LIST_4("FirstAidKit"),
 		LIST_3("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M")
 	};
 	linkedItems[] += {
@@ -400,7 +400,7 @@ class mat : r
 	backpackItems[] =
 	{
 		LIST_2("MRAWS_HEAT_F"),
-		LIST_5("diw_armor_plates_main_plate"),
+		LIST_3("diw_armor_plates_main_plate"),
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
 	};
 };
@@ -440,8 +440,8 @@ class hat : mat
 	};
 	backpackItems[] =
 	{
-		LIST_3("Titan_AT"),
-		LIST_4("diw_armor_plates_main_plate"),
+		LIST_1("Titan_AT"),
+		LIST_2("diw_armor_plates_main_plate"),
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
 	};
 	linkedItems[] += {
@@ -453,6 +453,12 @@ class ahat : hat
 {
 	displayName = "Heavy Antitank ammo bearer";
 	secondaryWeapon[] = {};
+	backpackItems[] =
+	{
+		LIST_2("Titan_AT"),
+		LIST_4("diw_armor_plates_main_plate"),
+		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
+	};
 };
 
 class sfsl : sl 
@@ -548,7 +554,7 @@ class sfmed : cls
 	backpackItems[] =
 	{
 	LIST_6("diw_armor_plates_main_plate"),
-	"FirstAidKit",
+	LIST_2("FirstAidKit"),
 	"Medikit"
 	};
 	linkedItems[] += {
@@ -641,14 +647,15 @@ class sfar : ar
 		"cup_muzzle_snds_mk23",
 	};
 	items[] = {
+		"diw_armor_plates_main_plate",
+		"greenmag_ammo_45ACP_basic_30Rnd",
 		"greenmag_item_speedloader",
-		"greenmag_ammo_9x19_basic_60Rnd",
 		LIST_3("ACE_CableTie"),
 		LIST_2("ACE_IR_Strobe_Item"),
 		"FirstAidKit"
 	};
 	magazines[] = {
-		LIST_3("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M"),
+		LIST_2("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M"),
 		LIST_2("ACE_CTS9"),
 		LIST_2("SmokeShellBlue"),
 		"HandGrenade",
@@ -657,7 +664,7 @@ class sfar : ar
 	backpackItems[] =
 	{
 	"CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
-	LIST_7("diw_armor_plates_main_plate"),
+	LIST_4("diw_armor_plates_main_plate"),
 	LIST_4("FirstAidKit")
 	};
 	linkedItems[] += {
@@ -708,7 +715,7 @@ class ceng : basetrooper
 		LIST_2("FirstAidKit"),
 		LIST_2("greenmag_ammo_46x30_basic_60Rnd"),
 		"ACE_Wirecutter",
-		LIST_3("APERSTripMine_Wire_Mag"),
+		LIST_2("APERSTripMine_Wire_Mag"),
 		LIST_2("DemoCharge_Remote_Mag"),
 		LIST_2("ClaymoreDirectionalMine_Remote_Mag"),
 		LIST_2("ACE_FlareTripMine_Mag"),
