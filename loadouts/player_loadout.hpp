@@ -10,7 +10,8 @@
 	  Changenotes: 
 		- Added code to initialize players/respawns, disabling base game stamina and adding APS plates and actions.
         - 2022-02-02: Uncommented RHS vests for SF	
-        - Switched default rifle and TL weapons for RHS ones		
+        - Switched default rifle and TL weapons for RHS ones
+        - 2022-02-11: Add MMG team (mjbLOVE for Banzerschreck)
 */
 
 // Weaponless Baseclass
@@ -229,6 +230,55 @@ class aar : r
 		"greenmag_ammo_556x45_basic_60Rnd",
 		LIST_3("greenmag_beltlinked_556x45_basic_200"),
 		LIST_6("diw_armor_plates_main_plate")		
+	};
+};
+
+class mmg : ar
+{
+	displayName = "MMG Gunner";
+	primaryWeapon[] =
+	{
+		"CUP_lmg_Mk48"
+	};
+	scope[] = {
+		"rhsusf_acc_su230a"
+	};
+	silencer[] = {
+		"rhsusf_acc_ardec_m240"
+	};
+	magazines[] =
+	{
+		LIST_2("ACE_M84"),
+		"SmokeShellRed",
+		LIST_3("greenmag_beltlinked_762x51_basic_200"),
+		"CUP_15Rnd_9x19_M9"
+	};
+	backpack[] = {
+		"B_Carryall_cbr"
+	};
+	backpackItems[] = {
+		LIST_4("diw_armor_plates_main_plate"),
+		LIST_5("FirstAidKit"),
+		LIST_3("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M")
+	};
+	linkedItems[] += {
+		"Rangefinder"
+	};  
+};
+
+class ammg : aar
+{
+  displayName = "Assistant MMG";
+	backpack[] = {
+		"B_Carryall_cbr"
+	};
+	backpackItems[] = {
+		LIST_4("diw_armor_plates_main_plate"),
+		LIST_5("FirstAidKit"),
+		LIST_9("greenmag_beltlinked_762x51_basic_100")
+	};
+	linkedItems[] += {
+		"Rangefinder"
 	};
 };
 

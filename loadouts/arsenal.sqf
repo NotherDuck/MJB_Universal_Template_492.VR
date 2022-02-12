@@ -68,6 +68,9 @@
 			- Removed a few redundancies
 		-2022-02-04:
 			- Scav uniforms
+		-2022-02-11:
+			- MMG team (mjbLOVE to Banzerschreck), not shaking down AR yet
+			- Moved non-base/med backpacks into _itemPackMedium and _itemPackHeavy
 */
 
 //Variables
@@ -242,6 +245,28 @@ private _itemEquipment =
 	"greenmag_item_speedloader"
 ];
 
+private _itemPackMedium = 
+[
+	"B_Carryall_cbr",
+	"B_Carryall_taiga_F",
+	"B_Carryall_eaf_F",
+	"B_Carryall_oli",
+	"rhs_tortila_grey",
+	"rhs_tortila_khaki",
+	"rhs_tortila_olive"
+];
+
+private _itemPackHeavy = 
+[	
+	"B_Bergen_mcamo_F",
+	"B_Bergen_tna_F",
+	"B_Bergen_dgtl_F",
+	"B_Bergen_hex_F",
+	"Blackjack50",
+	"B6SH118"
+];
+_itemPackHeavy append _itemPackMedium;
+
 if (_winter) then {
   private _winterCamo = 
   [
@@ -393,6 +418,7 @@ private _itemMod =
 	"rhs_acc_pgs64",
 	"rhs_acc_tgpv2",
 	"rhsgref_sdn6_suppressor",
+	"rhsusf_acc_ardec_m240",
 	
 	//============================================================
 	//Bipod & Foregrips
@@ -426,6 +452,20 @@ private _itemMod =
 	"CUP_acc_anpeq_15_Top_Flashlight_Black_L",
 	"CUP_acc_llm_black",
 	
+	"rhsusf_acc_anpeq15side_bk",
+	"rhsusf_acc_anpeq15_bk_top",
+	"rhsusf_acc_wmx_bk",
+	"rhsusf_acc_anpeq15_wmx",
+	"rhsusf_acc_m952v",
+	"rhsusf_acc_anpeq15_bk",
+	"rhsusf_acc_anpeq16a",
+	"rhsusf_acc_anpeq16a_top",
+	"rhs_acc_2dpzenit",
+	"rhs_acc_2dpzenit_ris",
+	"rhs_acc_perst1ik",
+	"rhs_acc_perst1ik_ris",
+	"rhs_acc_perst3",
+	"rhs_acc_perst3_top",
 	"rhs_acc_perst3_2dp_h"
 ];
 
@@ -664,6 +704,8 @@ private _itemWeaponAmmo =
 	"CUP_30Rnd_762x39_AK47_bakelite_M",
 	"CUP_30Rnd_762x39_AK47_M",
 	"CUP_30Rnd_Sa58_M",
+	
+	"rhs_30Rnd_762x39mm_Savz58",
 
 	//Loose ammo
 	"greenmag_ammo_762x39_basic_60Rnd",
@@ -725,6 +767,8 @@ private _itemWeaponTracerAmmo =
 	"CUP_30Rnd_TE1_Yellow_Tracer_762x39_AK47_bakelite_M",
 	"CUP_30Rnd_Sa58_M_TracerY",
 	"CUP_30Rnd_TE1_Yellow_Tracer_762x39_AK47_M",
+	
+	"rhs_30Rnd_762x39mm_Savz58_tracer",
 
 	//============================================================
 	//7.62x51mm
@@ -747,6 +791,7 @@ private _itemWeaponHighCapAmmo =
 	//============================================================
 	"CUP_60Rnd_556x45_SureFire",
 	"CUP_60Rnd_556x45_SureFire_Tracer_Yellow",
+	"CUP_50Rnd_556x45_Green_Tracer_Galil_Mag",
 
 	//============================================================
 	//5.45x39mm
@@ -853,8 +898,14 @@ private _itemWeaponAR =
 	//============================================================
 	"CUP_lmg_L110A1",
 	"CUP_arifle_L86A2",
+	"CUP_arifle_Galil_556_black",
 	
+	"rhs_weap_m249_pip_ris",
 	"rhs_weap_m249_pip_L_para",
+	"rhs_weap_m249_light_S",
+	"rhs_weap_m249_pip_S_para",
+	"rhs_weap_m27iar",
+	"rhs_weap_m27iar_grip",
 
 	//============================================================
 	//5.45x39mm
@@ -877,8 +928,6 @@ private _itemWeaponAR =
 	"CUP_lmg_M60E4",
 	"CUP_lmg_MG3_rail",
 	
-	"rhs_weap_m240G",
-	
 	//============================================================
 	//7.62x54mm
 	//============================================================
@@ -891,22 +940,15 @@ private _itemWeaponAR =
 	//============================================================
 	//LMG Accessories
 	//============================================================	
-	"cup_muzzle_snds_l85",
-	"cup_muzzle_snds_kzrzp_pk",
-	
-	"rhsusf_acc_elcan",
-	"rhsusf_acc_elcan_ard"
+	"cup_muzzle_snds_l85"
 ];
 
 private _itemWeaponSFAR = 
 [
 	//============================================================
 	//LMGs
-	//============================================================	
-	"CUP_lmg_Mk48",
+	//============================================================
 	
-	"rhs_weap_m240B",
-
 	//============================================================
 	//LMG Accessories
 	//============================================================	
@@ -943,24 +985,12 @@ private _itemWeaponARAmmo =
 	//7.62x54mmR
 	//============================================================
 	//Boxes
-	// "150Rnd_762x54_Box",
-	// "150Rnd_762x54_Box_Tracer",
-
 	"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M",
 	
 	//Loose belts
 	"greenmag_beltlinked_762x54_basic_200",
 	"greenmag_beltlinked_762x54_basic_100",
 	"greenmag_beltlinked_762x54_basic_50",
-
-	//Backpack
-	"B_Carryall_cbr",
-	"B_Carryall_taiga_F",
-	"B_Carryall_eaf_F",
-	"B_Carryall_oli",
-	"rhs_tortila_grey",
-	"rhs_tortila_khaki",
-	"rhs_tortila_olive",
 	
 	//Bling
 	"CUP_H_RUS_Altyn_Goggles",
@@ -1223,6 +1253,8 @@ private _itemWeaponLAT =
 	"rhs_weap_M136_hedp", // Not great for AT
 	"rhs_weap_M136_hp", // High Penetration
 	
+	"rhs_acc_at4_handler",
+
 	"rhs_weap_rpg7", // reloadable
 
 	//Launchers in Backpack
@@ -1235,12 +1267,6 @@ private _itemWeaponLAT =
 private _itemAmmoLAT = 
 [
 	//RPG Rockets (Uncomment desired rockets)
-	// "CUP_OG7_M", //HEfrag
-	// "CUP_PG7V_M", 
-	// "CUP_PG7VL_M", // High pen
-	// "CUP_PG7VM_M",
-	// "CUP_PG7VR_M", // Very High Pen Tandem
-	// "CUP_TBG7V_M", // HEdeath
 	
 	// "rhs_rpg7_OG7V_mag",
 	// "rhs_rpg7_PG7V_mag",
@@ -1261,11 +1287,7 @@ private _itemAmmoMAT =
 [
 	"MRAWS_HEAT_F",
 	"MRAWS_HEAT55_F",
-	"MRAWS_HE_F",
-	"B_Carryall_cbr",
-	"rhs_tortila_grey",
-	"rhs_tortila_khaki",
-	"rhs_tortila_olive"
+	"MRAWS_HE_F"
 ];
 
 private _itemWeaponHAT =
@@ -1277,10 +1299,32 @@ private _itemAmmoHAT =
 [
 	"Titan_AT",
 	"Rangefinder",
+	"ACE_Vector"
+];
+
+private _itemWeaponMMG =
+[  
+    "CUP_lmg_Mk48",
+    "CUP_lmg_M60",
+  
+    "rhs_weap_m240G",
+    "rhs_weap_m240B",  
+  
+    "cup_optic_hensoldtzo",
+    "cup_optic_acog2",
+	
+	"rhsusf_acc_elcan",
+	"rhsusf_acc_elcan_ard",
+    "rhsusf_acc_su230a"
+];
+
+private _itemWeaponMMGAmmo = 
+[
+	"150Rnd_762x51_Box_Tracer",
+	"Rangefinder",
 	"ACE_Vector",
-	"B_Bergen_mcamo_F",
-	"B_Bergen_tna_F",
-	"B6SH118"
+	"ace_csw_m220CarryTripod", // can deploy bipod on these
+	"ace_csw_spg9CarryTripod"
 ];
 
 private _itemSF =
@@ -1374,6 +1418,7 @@ private _itemEngineer =
 	"ACE_Chemlight_HiYellow",
 	"ACE_Chemlight_UltraHiOrange",
 	"ACE_TacticalLadder_Pack",
+	"Rangefinder",
 	"ACE_Vector",
 	
 	"rhs_charge_sb3kg_mag",
@@ -1387,11 +1432,8 @@ private _itemEngineer =
 	"CUP_V_MBSS_PACA_RGR",
 	"CUP_V_MBSS_PACA_Black",
 	"CUP_V_MBSS_PACA_Green",
-	"B_Bergen_mcamo_F",
-	"B_Bergen_tna_F",
 	"B_UAV_01_backpack_F",
-	"B_UGV_02_Demining_backpack_F",
-	"B6SH118"
+	"B_UGV_02_Demining_backpack_F"
 ];
 
 private _itemTankCrew =
@@ -1586,17 +1628,17 @@ switch (true) do
 {
 	case (_unitRole == "ar") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponAR + _itemWeaponMG + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponAR + _itemWeaponMG + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 	case (_unitRole == "aar") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 	case (_unitRole in _leaderRole) :
 	{
 		[arsenal, (_itemEquipment + _itemFacewear + _itemSpecial + _itemMod + _itemReflexSight +  _itemWeaponGL + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
-	case (_unitRole == "rm_fa") :
+	case (_unitRole == "r") :
 	{
 		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
@@ -1606,11 +1648,11 @@ switch (true) do
 	};
 	case (_unitRole == "mat") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponMAT + _itemMod + _itemReflexSight +  _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoMAT + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponMAT + _itemMod + _itemReflexSight +  _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoMAT + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "amat") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoMAT + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoMAT + _itemPackMedium + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "lat") :
 	{
@@ -1626,7 +1668,7 @@ switch (true) do
 	};
 		case (_unitRole == "sfsl") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "sfmed") :
 	{
@@ -1634,15 +1676,15 @@ switch (true) do
 	};
 		case (_unitRole == "sfmat") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponMAT + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemWeaponMAT + _itemAmmoMAT + _itemPackMedium + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "sfar") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackMedium + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 	case (_unitRole == "ceng") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemEngineer + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemEngineer + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 	case (_unitRole == "crew") :
 	{
@@ -1658,12 +1700,20 @@ switch (true) do
 	};
 	case (_unitRole == "hat") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponHAT + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoHAT + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemWeaponHAT + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoHAT + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "ahat") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoHAT + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB +  _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemAmmoHAT + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
+		case (_unitRole == "mmg") :
+	{
+		[arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponAR + _itemWeaponMG + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+	};
+		case (_unitRole == "ammg") :
+	{
+		[arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine+ _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMGAmmo  + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+	};  
 	default 
 	{
 		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
