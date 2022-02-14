@@ -953,6 +953,10 @@ private _itemWeaponSFAR =
 	//LMG Accessories
 	//============================================================	
 	"muzzle_snds_h_mg_blk_f",
+	"muzzle_snds_93mmg",
+	"muzzle_snds_93mmg_tan",
+	"muzzle_snds_338_black",
+	"muzzle_snds_338_sand",
 	"CUP_100Rnd_556x45_BetaCMag_ar15",
 	"CUP_100Rnd_TE1__Yellow_Tracer_556x45_BetaCMag_ar15"
 ];
@@ -1313,14 +1317,22 @@ private _itemWeaponMMG =
     "cup_optic_hensoldtzo",
     "cup_optic_acog2",
 	
-	"rhsusf_acc_elcan",
-	"rhsusf_acc_elcan_ard",
+    "rhsusf_acc_elcan",
+    "rhsusf_acc_elcan_ard",
     "rhsusf_acc_su230a"
 ];
 
 private _itemWeaponMMGAmmo = 
 [
 	"150Rnd_762x51_Box_Tracer",
+	"130Rnd_338_Mag",
+	"150Rnd_93x64_Mag",
+	"greenmag_beltlinked_338_basic_200",
+	"greenmag_beltlinked_338_basic_100",
+	"greenmag_beltlinked_338_basic_50",
+	"greenmag_beltlinked_93x64_basic_200",
+	"greenmag_beltlinked_93x64_basic_100",
+	"greenmag_beltlinked_93x64_basic_50",
 	"Rangefinder",
 	"ACE_Vector",
 	"ace_csw_m220CarryTripod", // can deploy bipod on these
@@ -1561,6 +1573,7 @@ if (_aceMedLoaded) then { //Check for ace med
 private _ownedDLCs = getDLCs 1; // DLC check, Credit to MajorDanvers
 private _hasApex = 395180 in _ownedDLCs;
 private _hasContact = 1021790 in _ownedDLCs;
+private _hasMarksmen = 332350 in _ownedDLCs;
 
 if (_hasApex) then {
 	_itemEquipment append [
@@ -1598,6 +1611,14 @@ if (_hasContact) then {
 	_itemAirCrew append [
 		"U_I_E_Uniform_01_coveralls_F"
 	];
+};
+
+if (_hasMarksmen) then {
+        _itemWeaponMMG append [
+                "MMG_01_tan_F",
+                "MMG_02_black_F",
+                "MMG_02_sand_F"
+        ];
 };
 
 //Add Existing Player Items
