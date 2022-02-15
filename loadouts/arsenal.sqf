@@ -1032,6 +1032,9 @@ private _itemWeaponSharpshooter =
 	
 	"rhs_weap_svds_npz",
 	"rhs_weap_svdp_npz",
+	
+	"ace_csw_m220CarryTripod", // can deploy bipod on these
+	"ace_csw_spg9CarryTripod",
 
 	//============================================================
 	//Magazines
@@ -1474,8 +1477,8 @@ private _itemTankCrew =
 	"NVGoggles",
 	"NVGoggles_OPFOR",
 	"rhsgref_6b23_khaki",
-    "rhsusf_mbav_mg",
-    "rhsusf_oakley_goggles_blk"
+        "rhsusf_mbav_mg",
+        "rhsusf_oakley_goggles_blk"
 ];
 
 private _itemHeloCrew =
