@@ -1064,6 +1064,8 @@ private _itemWeaponSharpshooter =
 	"CUP_optic_Elcan_SpecterDR_RMR_black",
 	"cup_optic_elcan_specterdr_kf_black",
 	
+	"rhsusf_acc_su230",
+	"rhsusf_acc_su230_mrds",
 	"rhsusf_acc_su230a", //zeroed for 7.62
 	"rhsusf_acc_su230a_mrds", //same but with a red dot
 	
@@ -1322,7 +1324,10 @@ private _itemWeaponMMG =
 	
     "rhsusf_acc_elcan",
     "rhsusf_acc_elcan_ard",
-    "rhsusf_acc_su230a"
+	"rhsusf_acc_su230",
+	"rhsusf_acc_su230_mrds",
+    "rhsusf_acc_su230a",
+	"rhsusf_acc_su230a_mrds"
 ];
 
 private _itemWeaponMMGAmmo = 
