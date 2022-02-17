@@ -1334,7 +1334,9 @@ private _itemWeaponMMGAmmo =
 [
 	"150Rnd_762x51_Box_Tracer",
 	"130Rnd_338_Mag",
+	"mjb_130Rnd_338_Mag_trc_ylw",
 	"150Rnd_93x64_Mag",
+	"mjb_150Rnd_93x64_Mag_trc_ylw",
 	"greenmag_beltlinked_338_basic_200",
 	"greenmag_beltlinked_338_basic_100",
 	"greenmag_beltlinked_338_basic_50",
@@ -1482,8 +1484,8 @@ private _itemTankCrew =
 	"NVGoggles",
 	"NVGoggles_OPFOR",
 	"rhsgref_6b23_khaki",
-        "rhsusf_mbav_mg",
-        "rhsusf_oakley_goggles_blk"
+    "rhsusf_mbav_mg",
+    "rhsusf_oakley_goggles_blk"
 ];
 
 private _itemHeloCrew =
