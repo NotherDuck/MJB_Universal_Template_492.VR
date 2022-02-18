@@ -393,6 +393,7 @@ private _itemMod =
 	"CUP_optic_pechenegscope", // 2.8x
 	
 	"rhs_acc_1p78", // 2x
+	"rhs_acc_pgo7v3",
 
 	//Others
 	//============================================================
@@ -606,7 +607,7 @@ private _itemWeaponRifle =
 	"CUP_arifle_Fort222",
 	"CUP_arifle_AK74",
 	
-	"rhs_weap_ak74m_npz",
+	"rhs_weap_ak74m",
 	"rhs_weap_ak74m_zenitco01",
 	
 	//============================================================
@@ -617,7 +618,7 @@ private _itemWeaponRifle =
 	
 	"CUP_arifle_AKM",
 	
-	"rhs_weap_ak103_npz",
+	"rhs_weap_ak103",
 	"rhs_weap_ak103_zenitco01",
 
 	//============================================================
@@ -658,7 +659,7 @@ private _itemWeaponCarbine =
 	
 	"rhs_weap_aks74un",
 	
-	"rhs_weap_ak105_npz",
+	"rhs_weap_ak105",
 	"rhs_weap_ak105_zenitco01",
 	
 	//============================================================
@@ -667,7 +668,7 @@ private _itemWeaponCarbine =
 	"CUP_arifle_OTS14_GROZA_762",
 	"CUP_arifle_Sa58_Carbine_RIS_AFG",
 	
-	"rhs_weap_ak104_npz",
+	"rhs_weap_ak104",
 	"rhs_weap_ak104_zenitco01"
 ];
 
@@ -912,7 +913,7 @@ private _itemWeaponAR =
 	//============================================================
 	"CUP_arifle_RPK74_45",
 	
-	"rhs_weap_rpk74m_npz",
+	"rhs_weap_rpk74m",
 	
 	//============================================================
 	//7.62x39mm
@@ -1030,8 +1031,8 @@ private _itemWeaponSharpshooter =
 	"CUP_srifle_SVD",
 	"CUP_srifle_SVD_top_rail",
 	
-	"rhs_weap_svds_npz",
-	"rhs_weap_svdp_npz",
+	"rhs_weap_svds",
+	"rhs_weap_svdp",
 	
 	"ace_csw_m220CarryTripod", // can deploy bipod on these
 	"ace_csw_spg9CarryTripod",
@@ -1191,7 +1192,7 @@ private _itemWeaponGL =
 	"CUP_arifle_AK74M_GL_railed",
 	"CUP_arifle_AK12_GP34_bicolor",
 	
-	"rhs_weap_ak74m_gp25_npz",
+	"rhs_weap_ak74m_gp25",
 
 	//7.62x39mm
 	"CUP_arifle_AKM_GL",
@@ -1200,7 +1201,7 @@ private _itemWeaponGL =
 	"CUP_arifle_OTS14_GROZA_762_GL",
 	"CUP_arifle_Sa58RIS2_gl",
 	
-	"rhs_weap_ak103_gp25_npz",
+	"rhs_weap_ak103_gp25",
 
 	//7.62x51mm
 	"CUP_arifle_DSA_SA58_OSW_M203",
@@ -1280,9 +1281,9 @@ private _itemAmmoLAT =
 	// "rhs_rpg7_OG7V_mag",
 	// "rhs_rpg7_PG7V_mag",
 	 "rhs_rpg7_PG7VL_mag", // High pen
-	 "rhs_rpg7_PG7VM_mag", // 
+	 "rhs_rpg7_PG7VM_mag"//, // 
 	// "rhs_rpg7_PG7VR_mag", // Very High Pen Tandem
-	 "rhs_rpg7_PG7VS_mag"//, // Between VM and VL, ~AT4 HEAT
+	// "rhs_rpg7_PG7VS_mag", // Between VM and VL, ~AT4 HEAT
 	// "rhs_rpg7_TBG7V_mag",
 	// "rhs_rpg7_type69_airburst_mag"
 ];
@@ -1388,7 +1389,7 @@ private _itemSF =
 	"CUP_sgun_AA12",
 		
 	"rhs_weap_ak74mr",
-	"rhs_weap_asval_grip_npz",
+	"rhs_weap_asval_grip",
 	"rhs_20rnd_9x39mm_SP6",	
 	
 	"CUP_20Rnd_B_AA12_Buck_00",
