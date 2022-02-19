@@ -941,7 +941,10 @@ private _itemWeaponAR =
 	//============================================================
 	//LMG Accessories
 	//============================================================	
-	"cup_muzzle_snds_l85"
+	"cup_muzzle_snds_l85",
+	
+    "rhsusf_acc_elcan",
+    "rhsusf_acc_elcan_ard"
 ];
 
 private _itemWeaponSFAR = 
@@ -1323,8 +1326,6 @@ private _itemWeaponMMG =
     "cup_optic_hensoldtzo",
     "cup_optic_acog2",
 	
-    "rhsusf_acc_elcan",
-    "rhsusf_acc_elcan_ard",
 	"rhsusf_acc_su230",
 	"rhsusf_acc_su230_mrds",
     "rhsusf_acc_su230a",
