@@ -8,7 +8,10 @@
 	Edited by Beagle on 2021-08-24
 	Edited by Alien314 on 2021-12-10
 	  Changenotes: 
-		- Added code to initialize players/respawns, disabling base game stamina and adding APS plates and actions.	    
+		- Added code to initialize players/respawns, disabling base game stamina and adding APS plates and actions.
+        - 2022-02-02: Uncommented RHS vests for SF	
+        - Switched default rifle and TL weapons for RHS ones
+        - 2022-02-11: Add MMG team (mjbLOVE for Banzerschreck)
 */
 
 // Weaponless Baseclass
@@ -148,7 +151,8 @@ class basetrooper
 	backpackItems[] = {};
 	
 	// This is executed after the unit init is complete. Argument: _this = _unit.
-	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; _player enableStamina false; _player enableFatigue false; if(isClass(configfile >> ""CfgPatches"" >> ""fatigue_core"")) then {_player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; _player setStamina 60; _player allowSprint true; _player call diw_armor_plates_main_fnc_fillVestWithPlates; _player call diw_armor_plates_main_fnc_addActionsToUnit; _player call diw_armor_plates_main_fnc_addPlayerHoldActions;}";
+	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; _player enableStamina false; _player enableFatigue false; if(isClass(configfile >> ""CfgPatches"" >> ""fatigue_core"")) then {_player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; _player setStamina 60; _player allowSprint true; _player call diw_armor_plates_main_fnc_fillVestWithPlates; _player call diw_armor_plates_main_fnc_addActionsToUnit; _player call diw_armor_plates_main_fnc_addPlayerHoldActions;}"; /*
+	Sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
 };
 
 
@@ -156,10 +160,13 @@ class r : basetrooper
 {
 	displayName = "Rifletrooper";
 	primaryWeapon[] = {
-		"CUP_arifle_HK416_Black"
+		"rhs_weap_hk416d145"
 	};
 	scope[] = {
 		"optic_hamr"
+	};
+	bipod[] = {
+		"rhsusf_acc_rvg_blk"
 	};
 	attachment[] = {
 		"CUP_acc_ANPEQ_15_Flashlight_Black_L"
@@ -192,6 +199,7 @@ class ar : basetrooper
 	scope[] = {
 		"optic_hamr"
 	};
+	bipod[] = {};
 	silencer[] = {
 		"CUP_muzzle_snds_M16"	
 	};
@@ -225,6 +233,55 @@ class aar : r
 	};
 };
 
+class mmg : ar
+{
+	displayName = "MMG Gunner";
+	primaryWeapon[] =
+	{
+		"CUP_lmg_Mk48"
+	};
+	scope[] = {
+		"rhsusf_acc_su230a"
+	};
+	silencer[] = {
+		"rhsusf_acc_ardec_m240"
+	};
+	magazines[] =
+	{
+		LIST_2("ACE_M84"),
+		"SmokeShellRed",
+		LIST_3("greenmag_beltlinked_762x51_basic_200"),
+		"CUP_15Rnd_9x19_M9"
+	};
+	backpack[] = {
+		"B_Carryall_cbr"
+	};
+	backpackItems[] = {
+		LIST_3("diw_armor_plates_main_plate"),
+		LIST_4("FirstAidKit"),
+		LIST_3("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M")
+	};
+	linkedItems[] += {
+		"Rangefinder"
+	};  
+};
+
+class ammg : aar
+{
+  displayName = "Assistant MMG";
+	backpack[] = {
+		"B_Carryall_cbr"
+	};
+	backpackItems[] = {
+		LIST_4("diw_armor_plates_main_plate"),
+		LIST_5("FirstAidKit"),
+		LIST_9("greenmag_beltlinked_762x51_basic_100")
+	};
+	linkedItems[] += {
+		"Rangefinder"
+	};
+};
+
 class sniper : basetrooper 
 {
 	displayName = "Sniper";
@@ -235,6 +292,7 @@ class sniper : basetrooper
 	scope[] = {
 		"CUP_optic_LeupoldMk4_25x50_LRT"
 	};
+	bipod[] = {};
 	silencer[] = {
 		"CUP_muzzle_mfsup_Suppressor_M107_Black"	
 	};
@@ -272,7 +330,7 @@ class tl : r
 {
 	displayName = "Team Leader";
 	primaryWeapon[] = {
-		"CUP_arifle_ACRC_EGLM_blk_556",
+		"rhs_weap_mk18_m320",
 	};
 	attachment[] = {
 		"CUP_acc_llm_black"
@@ -342,7 +400,7 @@ class mat : r
 	backpackItems[] =
 	{
 		LIST_2("MRAWS_HEAT_F"),
-		LIST_5("diw_armor_plates_main_plate"),
+		LIST_3("diw_armor_plates_main_plate"),
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
 	};
 };
@@ -382,8 +440,8 @@ class hat : mat
 	};
 	backpackItems[] =
 	{
-		LIST_3("Titan_AT"),
-		LIST_4("diw_armor_plates_main_plate"),
+		LIST_1("Titan_AT"),
+		LIST_2("diw_armor_plates_main_plate"),
 		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
 	};
 	linkedItems[] += {
@@ -395,6 +453,12 @@ class ahat : hat
 {
 	displayName = "Heavy Antitank ammo bearer";
 	secondaryWeapon[] = {};
+	backpackItems[] =
+	{
+		LIST_2("Titan_AT"),
+		LIST_4("diw_armor_plates_main_plate"),
+		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
+	};
 };
 
 class sfsl : sl 
@@ -410,7 +474,8 @@ class sfsl : sl
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki2"
+		"rhsusf_plateframe_teamleader"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -453,9 +518,8 @@ class sfmed : cls
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki",
-		"rhsusf_plateframe_medic",
-		"rhsusf_mbav_mg"
+		"rhsusf_plateframe_medic"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -490,7 +554,7 @@ class sfmed : cls
 	backpackItems[] =
 	{
 	LIST_6("diw_armor_plates_main_plate"),
-	"FirstAidKit",
+	LIST_2("FirstAidKit"),
 	"Medikit"
 	};
 	linkedItems[] += {
@@ -513,9 +577,8 @@ class sfmat : mat
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 		};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki2",
-		"rhsusf_plateframe_rifleman",
-		"rhsusf_mbav_mg"
+		"rhsusf_plateframe_rifleman"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -557,9 +620,8 @@ class sfar : ar
 		"CUP_U_O_RUS_Gorka_Green_gloves_kneepads"
 	};
 	vest[] = {
-		"CUP_V_B_Ciras_Khaki2",
-		"rhsusf_plateframe_machinegunner",
-		"rhsusf_mbav_mg"
+		"rhsusf_plateframe_machinegunner"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"G2_Gunslinger"
@@ -585,14 +647,15 @@ class sfar : ar
 		"cup_muzzle_snds_mk23",
 	};
 	items[] = {
+		"diw_armor_plates_main_plate",
+		"greenmag_ammo_45ACP_basic_30Rnd",
 		"greenmag_item_speedloader",
-		"greenmag_ammo_9x19_basic_60Rnd",
 		LIST_3("ACE_CableTie"),
 		LIST_2("ACE_IR_Strobe_Item"),
 		"FirstAidKit"
 	};
 	magazines[] = {
-		LIST_3("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M"),
+		LIST_2("CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M"),
 		LIST_2("ACE_CTS9"),
 		LIST_2("SmokeShellBlue"),
 		"HandGrenade",
@@ -601,7 +664,7 @@ class sfar : ar
 	backpackItems[] =
 	{
 	"CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
-	LIST_7("diw_armor_plates_main_plate"),
+	LIST_4("diw_armor_plates_main_plate"),
 	LIST_4("FirstAidKit")
 	};
 	linkedItems[] += {
@@ -616,7 +679,8 @@ class ceng : basetrooper
 		"H_HelmetSpecB_Sand"
 	};
 	vest[] = {
-		"CUP_V_MBSS_PACA_Tan"
+		"rhsusf_mbav_mg"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {
 		"B_Bergen_mcamo_F"
@@ -651,7 +715,7 @@ class ceng : basetrooper
 		LIST_2("FirstAidKit"),
 		LIST_2("greenmag_ammo_46x30_basic_60Rnd"),
 		"ACE_Wirecutter",
-		LIST_3("APERSTripMine_Wire_Mag"),
+		LIST_2("APERSTripMine_Wire_Mag"),
 		LIST_2("DemoCharge_Remote_Mag"),
 		LIST_2("ClaymoreDirectionalMine_Remote_Mag"),
 		LIST_2("ACE_FlareTripMine_Mag"),
@@ -679,8 +743,8 @@ class crew : basetrooper
 		"CUP_G_ESS_BLK_Facewrap_Black"
 	};
 	vest[] = {
-		"CUP_V_PMC_CIRAS_Khaki_Veh",
-		"rhsusf_mbav_mg"
+		"rhsgref_6b23_khaki"
+		//"rhsusf_mbav_mg"
 	};
 	backpack[] = {};
 	primaryWeapon[] =
@@ -715,8 +779,8 @@ class helocrew : crew
 		"H_PilotHelmetHeli_B"
 	};
 	vest[] = {
-		"CUP_V_PMC_CIRAS_Coyote_Veh",
-		"rhsusf_mbav_mg"
+		"rhsusf_mbav_light"
+		//"rhsusf_mbav_mg"
 	};
 };
 
