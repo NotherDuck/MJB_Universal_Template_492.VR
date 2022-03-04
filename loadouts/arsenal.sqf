@@ -237,6 +237,7 @@ private _itemEquipment =
 	"ItemWatch",
 	"Laserbatteries",
 	"ItemGPS",
+	"ACE_microDAGR",
 	
 	//Diwako
 	"diw_armor_plates_main_plate",
