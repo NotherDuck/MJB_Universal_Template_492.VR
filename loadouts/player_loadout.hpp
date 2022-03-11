@@ -338,7 +338,7 @@ class tl : r
 	bipod[] = {};
 	magazines[] = {
 	LIST_2("ACE_M84"),
-	LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
+	LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
 	"SmokeShellRed",
 	"SmokeShellBlue",
 	"CUP_15Rnd_9x19_M9",
