@@ -5,6 +5,9 @@
 	[true] call TMF_safestart_fnc_end;
 }; */
 
+mjb_startLoc = getPosASL player; // Fix for players falling through platforms on Utes
+player setPosASL mjb_startLoc; // Can also be used to teleport players back to start with remoteExec
+
 //workaround for magazines being slurped into weapons
 sleep 5;
 _primMags = primaryWeaponMagazine player;
