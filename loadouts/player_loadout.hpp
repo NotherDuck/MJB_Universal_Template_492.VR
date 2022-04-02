@@ -136,7 +136,7 @@ class basetrooper
 		"ACE_RangeCard",
 		"ACE_MapTools",
 		LIST_2("HandGrenade"),
-		LIST_2("SmokeShell"),
+		LIST_2("SmokeShell")
 	};
 	
 	// These are added directly into their respective slots
@@ -148,10 +148,12 @@ class basetrooper
 	};
 	
 	// These are put directly into the backpack.
-	backpackItems[] = {};
+	backpackItems[] = {
+		LIST_5("FirstAidKit")
+	};
 	
 	// This is executed (server-side) after the unit init is complete. Argument: _this = _unit.
-	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player};sleep 1; [{player enableStamina false; player enableFatigue false; if (isClass(configfile >> ""CfgPatches"" >> ""fatigue_core"")) then {player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; player setStamina 60; player allowSprint true; player call diw_armor_plates_main_fnc_fillVestWithPlates; player call diw_armor_plates_main_fnc_addActionsToUnit; player call diw_armor_plates_main_fnc_addPlayerHoldActions;}] remoteExec [""call"", _player];}"; /*
+	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player};sleep 1; [{player enableStamina false; player enableFatigue false; if (isClass (configfile >> ""CfgPatches"" >> ""fatigue_core"")) then {player setCustomAimCoef iEnemY_iFatigue_aimcoeff;}; player setStamina 60; player allowSprint true; player call diw_armor_plates_main_fnc_fillVestWithPlates; player call diw_armor_plates_main_fnc_addActionsToUnit; player call diw_armor_plates_main_fnc_addPlayerHoldActions;}] remoteExec [""call"", _player];}"; /*
 	Sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
 };
 
@@ -183,12 +185,10 @@ class r : basetrooper
 	};
 	backpackItems[] += {
 		LIST_6("diw_armor_plates_main_plate"),
-		LIST_3("greenmag_ammo_556x45_basic_60Rnd"),
-		LIST_5("FirstAidKit")
+		LIST_3("greenmag_ammo_556x45_basic_60Rnd")
 	};
 	
 };
-
 
 class ar : basetrooper
 {
@@ -207,15 +207,17 @@ class ar : basetrooper
 	{
 		LIST_2("ACE_M84"),
 		"SmokeShellRed",
-		LIST_3("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249"),
-		"CUP_15Rnd_9x19_M9"
+		"CUP_15Rnd_9x19_M9",
+		LIST_2("FirstAidKit"),
+		LIST_3("diw_armor_plates_main_plate")
 	};
 	backpack[] = {
 		"B_Carryall_cbr"
 	};
 	backpackItems[] = {
-		LIST_7("diw_armor_plates_main_plate"),
-		LIST_5("FirstAidKit"),
+		LIST_3("CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249"),
+		LIST_4("diw_armor_plates_main_plate"),
+		LIST_3("FirstAidKit"),
 		"greenmag_beltlinked_556x45_basic_200"
 	};
 };
@@ -226,10 +228,13 @@ class aar : r
 	backpack[] = {
 		"B_Carryall_cbr"
 	};
+	items[] += {
+		LIST_5("FirstAidKit")
+	};
 	backpackItems[] = {
 		"greenmag_ammo_556x45_basic_60Rnd",
 		LIST_3("greenmag_beltlinked_556x45_basic_200"),
-		LIST_6("diw_armor_plates_main_plate")		
+		LIST_5("diw_armor_plates_main_plate")
 	};
 };
 
@@ -305,9 +310,19 @@ class sniper : basetrooper
 	};
 	magazines[] = {
 		"ACE_ATragMX",
-		LIST_2("greenmag_ammo_127x99_basic_60Rnd"),
+		"greenmag_ammo_127x99_basic_60Rnd",
 		LIST_2("CUP_40Rnd_46x30_MP7"),
 		LIST_6("CUP_10Rnd_127x99_M107")
+	};
+	items[] = {
+		"greenmag_item_speedloader",
+		"ACE_RangeCard",
+		"ACE_MapTools",
+		"HandGrenade",
+		LIST_2("SmokeShell")
+	};
+	backpackItems[] += {
+		LIST_3("diw_armor_plates_main_plate")
 	};
 };
 
@@ -337,12 +352,12 @@ class tl : r
 	};
 	bipod[] = {};
 	magazines[] = {
-	LIST_2("ACE_M84"),
-	LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
-	"SmokeShellRed",
-	"SmokeShellBlue",
-	"CUP_15Rnd_9x19_M9",
-	LIST_10("CUP_30Rnd_556x45_Emag_Tracer_Yellow")
+		LIST_2("ACE_M84"),
+		LIST_2("greenmag_ammo_556x45_basic_60Rnd"),
+		"SmokeShellRed",
+		"SmokeShellBlue",
+		"CUP_15Rnd_9x19_M9",
+		LIST_10("CUP_30Rnd_556x45_Emag_Tracer_Yellow")
 	};
 	linkedItems[] += {
 		"Rangefinder"
@@ -369,10 +384,13 @@ class cls : r
 	backpack[] = {
 		"B_Carryall_oucamo"
 	};
+	magazines[] += {
+		"greenmag_ammo_556x45_basic_60Rnd"
+	};
 	backpackItems[] =
 	{
-		LIST_6("diw_armor_plates_main_plate"),
-		"greenmag_ammo_556x45_basic_60Rnd",
+		LIST_5("diw_armor_plates_main_plate"),
+		LIST_5("FirstAidKit"),
 		"Medikit",
 		LIST_2("SmokeShell"),
 		LIST_2("SmokeShellBlue"),
@@ -397,31 +415,40 @@ class mat : r
 	backpack[] = {
 		"B_Carryall_cbr"
 	};
+	items[] = {
+		"greenmag_item_speedloader",
+		"ACE_RangeCard",
+		"ACE_MapTools",
+		"HandGrenade",
+		LIST_2("SmokeShell")
+	};
 	backpackItems[] =
 	{
 		LIST_2("MRAWS_HEAT_F"),
 		LIST_3("diw_armor_plates_main_plate"),
-		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
+		"greenmag_ammo_556x45_basic_60Rnd",
+		LIST_2("FirstAidKit")
 	};
 };
 
 class amat : r
 {
 	displayName = "Antitank ammo bearer";
-	magazines[] += {
-		LIST_2("CUP_30Rnd_556x45_Emag")
-	};
 	items[] = {
 		"greenmag_item_speedloader",
-		LIST_2("FirstAidKit"),
+		"ACE_RangeCard",
+		"ACE_MapTools",
+		"HandGrenade",
+		LIST_2("SmokeShell")
 	};
 	backpack[] = {
 		"B_Carryall_cbr"
 	};
 	backpackItems[] =
 	{
-		LIST_4("diw_armor_plates_main_plate"),
+		LIST_3("diw_armor_plates_main_plate"),
 		LIST_3("MRAWS_HEAT_F"),
+		LIST_3("FirstAidKit")
 	};
 };
 
@@ -433,7 +460,8 @@ class hat : mat
 	};
 	items[] = {
 		"greenmag_item_speedloader",
-		LIST_3("FirstAidKit")
+		"ACE_RangeCard",
+		"ACE_MapTools"
 	};
 	backpack[] = {
 		"B_Bergen_mcamo_F"
@@ -442,7 +470,8 @@ class hat : mat
 	{
 		LIST_1("Titan_AT"),
 		LIST_2("diw_armor_plates_main_plate"),
-		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
+		"greenmag_ammo_556x45_basic_60Rnd",
+		LIST_3("FirstAidKit")
 	};
 	linkedItems[] += {
 		"Rangefinder"
@@ -453,11 +482,15 @@ class ahat : hat
 {
 	displayName = "Heavy Antitank ammo bearer";
 	secondaryWeapon[] = {};
+	items[] += {
+		LIST_2("SmokeShell")
+	};
 	backpackItems[] =
 	{
 		LIST_2("Titan_AT"),
-		LIST_4("diw_armor_plates_main_plate"),
-		LIST_2("greenmag_ammo_556x45_basic_60Rnd")
+		LIST_3("diw_armor_plates_main_plate"),
+		"greenmag_ammo_556x45_basic_60Rnd",
+		LIST_5("FirstAidKit")
 	};
 };
 
@@ -543,7 +576,7 @@ class sfmed : cls
 		LIST_2("ACE_IR_Strobe_Item")
 	};
 	magazines[] = {
-		LIST_4("CUP_20Rnd_B_AA12_Buck_00"),
+		LIST_4("CUP_20Rnd_B_AA12_Slug"),
 		"SmokeShellBlue",
 		LIST_2("SmokeShellPurple"),
 		LIST_2("SmokeShellRed"),
@@ -553,9 +586,9 @@ class sfmed : cls
 	};
 	backpackItems[] =
 	{
-	LIST_6("diw_armor_plates_main_plate"),
-	LIST_2("FirstAidKit"),
-	"Medikit"
+		LIST_5("diw_armor_plates_main_plate"),
+		LIST_5("FirstAidKit"),
+		"Medikit"
 	};
 	linkedItems[] += {
 		"Rangefinder"
@@ -591,14 +624,14 @@ class sfmat : mat
 		"cup_muzzle_snds_mk23",
 	};
 	items[] += {
-	LIST_3("ACE_CableTie"),
-	LIST_2("ACE_IR_Strobe_Item")
+		LIST_3("ACE_CableTie"),
+		LIST_2("ACE_IR_Strobe_Item")
 	};
 	magazines[] = {
 		LIST_7("CUP_30Rnd_556x45_Emag"),
 		LIST_2("ACE_CTS9"),
 		LIST_2("SmokeShellBlue"),
-		LIST_1("HandGrenade"),
+		"HandGrenade",
 		"CUP_12Rnd_45ACP_mk23"
 	};
 	backpackItems[] += {};
@@ -663,9 +696,9 @@ class sfar : ar
 	};
 	backpackItems[] =
 	{
-	"CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
-	LIST_4("diw_armor_plates_main_plate"),
-	LIST_4("FirstAidKit")
+		"CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
+		LIST_4("diw_armor_plates_main_plate"),
+		LIST_4("FirstAidKit")
 	};
 	linkedItems[] += {
 		"Rangefinder"
@@ -698,12 +731,14 @@ class ceng : basetrooper
 	items[] = {
 		"greenmag_item_speedloader",
 		"ACE_Clacker",
+		"ACE_RangeCard",
+		"ACE_MapTools"
 	};
 	magazines[] = {
 		LIST_6("CUP_40Rnd_46x30_MP7"),
 		LIST_2("ACE_M14"),
 		LIST_2("SmokeShellBlue"),
-		LIST_2("HandGrenade"),
+		"HandGrenade",
 		LIST_2("ACE_Chemlight_HiBlue"),
 		LIST_2("ACE_Chemlight_HiYellow"),
 		LIST_2("ACE_Chemlight_UltraHiOrange"),
@@ -712,13 +747,13 @@ class ceng : basetrooper
 	backpackItems[] =
 	{
 		LIST_4("diw_armor_plates_main_plate"),
-		LIST_2("FirstAidKit"),
-		LIST_2("greenmag_ammo_46x30_basic_60Rnd"),
+		LIST_3("FirstAidKit"),
+		"greenmag_ammo_46x30_basic_60Rnd",
 		"ACE_Wirecutter",
 		LIST_2("APERSTripMine_Wire_Mag"),
 		LIST_2("DemoCharge_Remote_Mag"),
 		LIST_2("ClaymoreDirectionalMine_Remote_Mag"),
-		LIST_2("ACE_FlareTripMine_Mag"),
+		"ACE_FlareTripMine_Mag",
 		"ATMine_Range_Mag",
 		"SLAMDirectionalMine_Wire_Mag"
 	};
@@ -753,6 +788,14 @@ class crew : basetrooper
 	};
 	scope[] = {
 		"CUP_optic_ZeissZPoint"
+	};
+	items[] = {
+		"greenmag_item_speedloader",
+		"ACE_RangeCard",
+		"ACE_MapTools",
+		"HandGrenade",
+		LIST_2("SmokeShell"),
+		"FirstAidKit"
 	};
 	magazines[] = {
 		LIST_3("CUP_40Rnd_46x30_MP7"),
@@ -809,9 +852,10 @@ class aircrew : basetrooper
 		"cup_muzzle_snds_mk23",
 	};
 	items[] = {
-		LIST_1("ACE_IR_Strobe_Item"),
-		LIST_1("FirstAidKit"),
-		LIST_1("ACE_Chemlight_UltraHiOrange"),
+		"ACE_IR_Strobe_Item",
+		LIST_2("FirstAidKit"),
+		"ACE_Chemlight_UltraHiOrange",
+		"ACE_MapTools"
 	};
 	magazines[] = {
 		LIST_2("CUP_12Rnd_45ACP_mk23"),
