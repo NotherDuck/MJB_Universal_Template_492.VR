@@ -279,8 +279,8 @@ class ammg : aar
 	};
 	backpackItems[] = {
 		LIST_4("diw_armor_plates_main_plate"),
-		LIST_5("FirstAidKit"),
-		LIST_9("greenmag_beltlinked_762x51_basic_100")
+		LIST_4("FirstAidKit"),
+		LIST_4("greenmag_beltlinked_762x51_basic_200")
 	};
 	linkedItems[] += {
 		"Rangefinder"
