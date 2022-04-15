@@ -128,6 +128,11 @@ private _itemEquipment =
 	"CUP_V_CZ_NPP2006_nk_black",
 	"CUP_V_CZ_NPP2006_nk_vz95",
 	"CUP_V_CZ_NPP2006_nk_des",
+	"Module3mAssault_vest",
+	"Module3mTV109_vest",
+	"Module3mD3CRX_vest",
+	"Module3mThunderbolt_vest",
+	"Module3mTriton_vest",
 	
 	//============================================================
 	//Backpacks
