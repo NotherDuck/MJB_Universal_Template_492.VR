@@ -262,17 +262,6 @@ private _itemPackMedium =
 	"rhs_tortila_olive"
 ];
 
-private _itemPackHeavy = 
-[	
-	"B_Bergen_mcamo_F",
-	"B_Bergen_tna_F",
-	"B_Bergen_dgtl_F",
-	"B_Bergen_hex_F",
-	"Blackjack50",
-	"B6SH118"
-];
-_itemPackHeavy append _itemPackMedium;
-
 if (_winter) then {
   private _winterCamo = 
   [
@@ -284,10 +273,24 @@ if (_winter) then {
 	"CUP_H_PMC_Beanie_Winter",	
 	"CUP_H_PMC_Beanie_Headphones_Winter",
 	
-	"CUP_V_PMC_CIRAS_Winter_Patrol"
+	"CUP_V_PMC_CIRAS_Winter_Patrol",
+	
+	"B_FieldPack_oucamo"
   ];
   _itemEquipment append _winterCamo;
+  _itemPackMedium pushback "B_Carryall_oucamo";
 };
+
+private _itemPackHeavy = 
+[	
+	"B_Bergen_mcamo_F",
+	"B_Bergen_tna_F",
+	"B_Bergen_dgtl_F",
+	"B_Bergen_hex_F",
+	"Blackjack50",
+	"B6SH118"
+];
+_itemPackHeavy append _itemPackMedium;
 
 private _itemFacewear =
 [
@@ -1258,6 +1261,7 @@ private _itemMedic =
 [
 	//BIS
 	"B_Carryall_oucamo",
+	
 	"rhs_tortila_black"
 ];
 
