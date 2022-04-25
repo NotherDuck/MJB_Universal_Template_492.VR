@@ -1291,7 +1291,7 @@ private _itemAmmoLAT =
 [
 	//RPG Rockets (Uncomment desired rockets)
 	
-	// "rhs_rpg7_OG7V_mag",
+	 "rhs_rpg7_OG7V_mag",
 	// "rhs_rpg7_PG7V_mag",
 	 "rhs_rpg7_PG7VL_mag", // High pen
 	 "rhs_rpg7_PG7VM_mag"//, // 
