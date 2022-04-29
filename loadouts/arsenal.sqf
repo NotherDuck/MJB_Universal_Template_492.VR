@@ -1339,7 +1339,13 @@ private _itemWeaponMMG =
 	"rhsusf_acc_su230",
 	"rhsusf_acc_su230_mrds",
     "rhsusf_acc_su230a",
-	"rhsusf_acc_su230a_mrds"
+	"rhsusf_acc_su230a_mrds",
+	
+	"dzn_mg_tripod_universal",
+	"dzn_mg_tripod_m122a1_m60mount",
+	"dzn_mg_tripod_m122a1_m240mount",
+	"dzn_mg_tripod_m122a1_m249mount_rhs",
+	"dzn_mg_tripod_m122a1_m240mount_rhs"
 ];
 
 private _itemWeaponMMGAmmo = 
