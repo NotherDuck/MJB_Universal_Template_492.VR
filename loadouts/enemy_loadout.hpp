@@ -89,7 +89,7 @@ class baseMan
 	backpackItems[] = {};
 	
 	// This is executed (server-side) after the unit init is complete. Argument: _this = _unit.
-	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; [{[] spawn {sleep 8; if (isClass (configfile >> ""CfgPatches"" >> ""fatigue_core"")) then { if(iEnemY_iFatigue_use_sway) then { player setCustomAimCoef iEnemY_iFatigue_aimcoeff; }; if(iEnemY_iFatigue_stamina_enabled) then { player enableStamina false; }; if(iEnemY_iFatigue_fatigue_enabled) then { player enableFatigue false; }; }; player allowSprint true; player call diw_armor_plates_main_fnc_fillVestWithPlates; player call diw_armor_plates_main_fnc_addActionsToUnit; player call diw_armor_plates_main_fnc_addPlayerHoldActions;}; }] remoteExec [""call"", _player];}"; /*
+	code = "[_this] spawn { params [""_player""]; waitUntil {sleep 3; isPlayer _player}; [{[] spawn {sleep 8; if (isClass (configfile >> ""CfgPatches"" >> ""fatigue_core"")) then { if(iEnemY_iFatigue_use_sway) then { player setCustomAimCoef iEnemY_iFatigue_aimcoeff; }; if(iEnemY_iFatigue_stamina_enabled) then { player enableStamina false; }; if(iEnemY_iFatigue_fatigue_enabled) then { player enableFatigue false; }; }; player allowSprint true; player call diw_armor_plates_main_fnc_fillVestWithPlates; player call diw_armor_plates_main_fnc_addActionsToUnit; player call diw_armor_plates_main_fnc_addPlayerHoldActions; call babe_em_fnc_init;}; }] remoteExec [""call"", _player];}"; /*
 	Sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
 };
 
