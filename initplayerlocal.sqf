@@ -24,15 +24,17 @@ if(handgunWeapon player != "") then {
   player addItem (handgunMagazine player select 0);
 };
 
+mjb_jipFast = false; if (didJIP) then {mjb_jipTime = time; mjb_jipFast = true;};
 bef_ttap = diw_armor_plates_main_timeToAddPlate; // Credit: MajorDanvers for this block, reduces plating time during safestart
 private _plateMachine = [[player], true] call CBA_statemachine_fnc_create;
 [_plateMachine, {}, {
     diw_armor_plates_main_timeToAddPlate = 0.5;}, {}, "fast"] call CBA_statemachine_fnc_addState;
 [_plateMachine, {}, {
     diw_armor_plates_main_timeToAddPlate = bef_ttap;
-	if (time <1290) then {
+	if (time < 1290 || {mjb_jipFast}) then {
       player call diw_armor_plates_main_fnc_fillVestWithPlates; // Fill plates in-case anyone forgot
 	};
+	mjb_jipFast = false;
 }, {}, "slow"] call CBA_statemachine_fnc_addState;
-[_plateMachine, "fast", "slow", {!([] call TMF_safestart_fnc_isActive)}, {}, "Safestart deactivated"] call CBA_statemachine_fnc_addTransition;
-[_plateMachine, "slow", "fast", {[] call TMF_safestart_fnc_isActive}, {}, "Safestart active"] call CBA_statemachine_fnc_addTransition;
+[_plateMachine, "fast", "slow", { mjb_jipFast && {mjb_jipTime + 90 < time} || {!mjb_jipFast && {!([] call TMF_safestart_fnc_isActive)}}}, {}, "Safestart deactivated"] call CBA_statemachine_fnc_addTransition;
+[_plateMachine, "slow", "fast", {[] call TMF_safestart_fnc_isActive || {mjb_jipFast && {mjb_jipTime + 90 > time}}}, {}, "Safestart active"] call CBA_statemachine_fnc_addTransition;
