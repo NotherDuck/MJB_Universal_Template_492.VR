@@ -23,3 +23,11 @@ addMissionEventHandler ["OnUserAdminStateChanged", {    // Admin JIP handler
         ["Warning, admin briefing not found. Expected: MISSION_ROOT\briefing\admin.sqf"] remoteExec ["systemChat", _JIPAdmin]; };  
   }; };    
 }];
+
+// Fortify rules: disallow placement of non-interactable objects with cost greater than 25 if not near terrain level
+[{
+    params ["_unit", "_object", "_cost"];
+	private _interactable = (_object isKindOf "AllVehicles" || {_object isKindOf "ReammoBox" || {_object isKindOf "ThingX"}});
+    private _return = (_cost < 26 || { _interactable || {(getPosATL _object) select 2 < 0.5}});
+    _return
+}] call ace_fortify_fnc_addDeployHandler;

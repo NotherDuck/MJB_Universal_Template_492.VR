@@ -40,11 +40,11 @@ class CfgDebriefing
 
 class CfgLoadouts
 {
-    class PLAYER_LOADOUT
-    {
-        displayName = "Example Player Loadout";
-        #include "loadouts\player_loadout.hpp"
-    };
+	class PLAYER_LOADOUT
+	{
+		displayName = "Example Player Loadout";
+		#include "loadouts\player_loadout.hpp"
+	};
 	class ENEMY_LOADOUT
 	{
 		displayName = "Example Enemy Loadout";
@@ -64,5 +64,22 @@ class CfgDebriefingSections
 	{
 		title = "ACEX Killed Events";
 		variable = "acex_killTracker_outputText";
+	};
+};
+
+class ACEX_Fortify_Presets {
+	class rats {
+		displayName = "RATS";
+		objects[] = {
+			{"FootBridge_0_ACR", 5},
+			{"Land_Plank_01_4m_F", 5},
+			{"Land_tires_EP1", 10},
+			{"Land_Tyres_F", 10},
+			{"ClutterCutter_small_2_EP1", 10},
+			{"TyreBarrier_01_black_F", 15},
+			{"Land_Misc_ConcPipeline_EP1", 25},
+			{"Land_ConcretePipe_F", 25},
+			{"Land_BagBunker_Small_F", 50}
+		};
 	};
 };
