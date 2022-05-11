@@ -1059,6 +1059,8 @@ private _itemWeaponSharpshooter =
 
 	"ace_csw_m220CarryTripod", // can deploy bipod on these
 	"ace_csw_spg9CarryTripod",
+	
+	"ACE_ATragMX",
 
 	//============================================================
 	//Magazines
@@ -1172,8 +1174,7 @@ private _itemSniper =
 	"greenmag_ammo_127x108_basic_60Rnd",
 	"greenmag_ammo_338_basic_30Rnd",
 	"greenmag_ammo_338_basic_60Rnd",
-	"greenmag_ammo_46x30_basic_60Rnd",
-	"ACE_ATragMX"
+	"greenmag_ammo_46x30_basic_60Rnd"
 ];
 
 private _itemWeaponGL =
