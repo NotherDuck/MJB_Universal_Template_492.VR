@@ -217,6 +217,8 @@ private _itemEquipment =
 
 	"H_Hat_camo",
 	"NVGoggles_OPFOR",
+	"CUP_NVG_GPNVG_black",
+	"CUP_NVG_GPNVG_tan",
 
 	//RHS headset cosmetics
 	"rhs_6m2_nvg",
@@ -273,6 +275,7 @@ if (_winter) then {
 
 		"CUP_H_PMC_Beanie_Winter",
 		"CUP_H_PMC_Beanie_Headphones_Winter",
+		"CUP_NVG_GPNVG_winter",
 
 		"CUP_V_PMC_CIRAS_Winter_Patrol",
 
@@ -1482,6 +1485,7 @@ private _itemEngineer =
 	"rhs_charge_tnt_x2_mag",
 	"rhs_tr8_periscope",
 	"rhsusf_bino_leopold_mk4",
+	"rhs_mag_an_m14_th3",
 
 	//Equipment
 	"CUP_V_MBSS_PACA_Tan",
