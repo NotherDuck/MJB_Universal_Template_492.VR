@@ -403,7 +403,16 @@ private _itemMod =
 	"cup_optic_aimm_compm2_blk",
 	"cup_optic_aimm_compm4_blk",
 	"cup_optic_aimm_zddot_blk",
-	"cup_optic_g33_hws_blk",
+	
+	"tier1_exps3_0_g33_black_up",
+	"tier1_exps3_0_g33_riser_black_up",
+	"Tier1_EXPS3_0_G33_Riser_Tano_Up",
+	"Tier1_Romeo4T_BCD_G33_Black_Up",
+	"Tier1_Romeo4T_BCQ_G33_Black_Up",
+	"Tier1_Microt2_G33_Black_Up",
+	"Tier1_Romeo4T_BCD_G33_Riser_Black_Up",
+	"Tier1_Romeo4T_BCQ_G33_Riser_Black_Up",
+	"Tier1_Microt2_G33_Riser_Black_Up",
 
 	//Dovetail (Ak Sights)
 	"CUP_optic_pechenegscope", // 2.8x
@@ -436,6 +445,11 @@ private _itemMod =
 	"rhs_acc_tgpv2",
 	"rhsgref_sdn6_suppressor",
 	"rhsusf_acc_ardec_m240",
+	
+	"Tier1_Gemtech_Halo",
+	"Tier1_SOCOM762_2_DE",
+	"Tier1_SOCOM762_2_Black",
+	"Tier1_kac_556_qdc_cqb_black",
 
 	//============================================================
 	//Bipod & Foregrips
@@ -453,7 +467,15 @@ private _itemMod =
 	"rhsusf_acc_kac_grip_saw_bipod",
 	"rhsusf_acc_grip4_bipod",
 	"rhsusf_acc_grip4",
-	"rhsusf_acc_saw_lw_bipod",
+	"rhsusf_acc_saw_lw_bipod",	
+	
+	"Tier1_SAW_Bipod_DD",
+	"Tier1_MVG_MLOK_Black",
+	"Tier1_AFG_MLOK_Black",
+	"Tier1_Larue_FUG_Black",
+	"Tier1_Harris_Bipod_Black",
+	"Tier1_Harris_Bipod_Tan",
+	"Tier1_Harris_Bipod_MLOK_Black_2",
 
 	//============================================================
 	//Other rail attachments
@@ -483,7 +505,22 @@ private _itemMod =
 	"rhs_acc_perst1ik_ris",
 	"rhs_acc_perst3",
 	"rhs_acc_perst3_top",
-	"rhs_acc_perst3_2dp_h"
+	"rhs_acc_perst3_2dp_h",
+	
+	"Tier1_ngal_side",
+	"Tier1_m300c_black",
+	"Tier1_RAHG_NGAL_M600V_Black_FL",
+	"Tier1_416_LA5_M600V_Black_FL",
+	"Tier1_DBALPL_FL",
+	"Tier1_MW_NGAL_M600V_Black_FL",
+	"Tier1_Mk18_LA5_M600V_Black_FL",
+	"Tier1_Mk18_NGAL_M300C_Black_FL",
+	"Tier1_MP7_NGAL_M300C_Black_FL",
+	"Tier1_10_LA5_Side",
+	"Tier1_Mk18_NGAL_M603V_FL",
+	"Tier1_SCAR_NGAL_M300C_FL",
+	"Tier1_M4BII_NGAL_M300C_Black_FL",
+	"Tier1_SR25_LA5_Side"
 ];
 
 private _itemReflexSight =
@@ -513,6 +550,8 @@ private _itemReflexSight =
 	"rhs_acc_ekp8_18",
 	"rhsusf_acc_t1_low",
 	"rhsusf_acc_t1_low_fwd",
+	
+	"Tier1_EXPS3_0_Tano",
 
 	//Dovetail (Ak Sights)
 	"CUP_optic_ekp_8_02",
@@ -538,6 +577,9 @@ private _itemWeaponPistol =
 	"CUP_hgun_Colt1911",
 	"CUP_hgun_Glock17_blk",
 	"CUP_hgun_TT",
+	
+	"rhs_weap_pya",
+	"Tier1_P320",
 
 	//Magazines
 	"CUP_13Rnd_9x19_Browning_HP",
@@ -549,6 +591,11 @@ private _itemWeaponPistol =
 	"CUP_7Rnd_45ACP_1911",
 	"CUP_17Rnd_9x19_glock17",
 	"CUP_8Rnd_762x25_TT",
+	
+	"rhs_mag_9x19_17",
+	
+	"Tier1_15Rnd_9x19_JHP",
+	"Tier1_17Rnd_9x19_P320_JHP",
 
 	//Loose ammo
 	"greenmag_ammo_9x19_basic_30Rnd",
@@ -560,7 +607,8 @@ private _itemWeaponPistol =
 	//Attachments
 	"cup_acc_mk23_lam_f",
 	"CUP_acc_CZ_M3X",
-	"cup_acc_glock17_flashlight"
+	"cup_acc_glock17_flashlight",
+	"tier1_x300u"
 ];
 
 private _itemLeaderEquipment =
@@ -570,6 +618,9 @@ private _itemLeaderEquipment =
 	"CUP_hgun_TaurusTracker455",
 	"CUP_hgun_Deagle",
 	"hgun_Pistol_heavy_02_F",
+	"Tier1_P320_TB",
+	"Tier1_Glock19_Urban",
+	"Tier1_Glock19_Urban_TB",
 
 	"CUP_6Rnd_45ACP_M",
 	"CUP_7Rnd_50AE_Deagle",
@@ -579,6 +630,7 @@ private _itemLeaderEquipment =
 	"optic_mrd_black",
 	"muzzle_snds_l",
 	"cup_muzzle_snds_mk23",
+	"tier1_agency_compensator",
 
 	"greenmag_ammo_50AE_ball_30Rnd", // deagle rounds
 
@@ -606,12 +658,16 @@ private _itemWeaponRifle =
 	"CUP_CZ_BREN2_556_11_Tan",
 
 	"rhs_weap_hk416d145",
+	
+	"Tier1_HK416D145_MW13_CTR",
 
 	"rhs_weap_m4a1_blockII_KAC_bk",
 
 	"CUP_Famas_F1_Rail",
 
 	"rhs_weap_m16a4_carryhandle",
+	
+	"mjb_arifle_C7Alpha",
 
 	"CUP_arifle_AK101",
 	"CUP_arifle_AK101_railed",
@@ -634,10 +690,10 @@ private _itemWeaponRifle =
 	"rhs_weap_savz58v",
 	"rhs_weap_savz58v_rail_black",
 
-	"CUP_arifle_AKM",
 	"CUP_arifle_TYPE_56_2",
 	"CUP_arifle_TYPE_56_2_top_rail",
 
+    "rhs_weap_akmn",
 	"rhs_weap_ak103",
 	"rhs_weap_ak103_zenitco01",
 
@@ -661,6 +717,8 @@ private _itemWeaponCarbine =
 	"CUP_arifle_G36CA3_grip",
 
 	"rhs_weap_hk416d10",
+	
+	"Tier1_HK416D10_CTR",
 
 	"CUP_arifle_XM8_Compact_Rail",
 
@@ -738,6 +796,7 @@ private _itemWeaponAmmo =
 	//Magazines
 	"CUP_20Rnd_762x51_FNFAL_M",
 	"CUP_20Rnd_762x51_B_SCAR",
+	"CUP_20Rnd_762x51_HK417",
 
 	//Loose ammo
 	"greenmag_ammo_762x51_basic_60Rnd",
@@ -797,7 +856,8 @@ private _itemWeaponTracerAmmo =
 	//7.62x51mm
 	//============================================================
 	"CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M",
-	"CUP_20Rnd_TE1_Yellow_Tracer_762x51_SCAR"
+	"CUP_20Rnd_TE1_Yellow_Tracer_762x51_SCAR",
+	"CUP_20Rnd_TE1_Yellow_Tracer_762x51_HK417"
 
 	//============================================================
 	//7.62x54mm
@@ -930,6 +990,8 @@ private _itemWeaponAR =
 	"rhs_weap_m249_pip_S_para",
 	"rhs_weap_m27iar",
 	"rhs_weap_m27iar_grip",
+	
+	"Tier1_MK46_Mod1_Savit",
 
 	//============================================================
 	//5.45x39mm
@@ -1034,13 +1096,6 @@ private _itemWeaponARAmmo =
 	"CUP_H_RUS_Altyn_Shield_Down_black"
 ];
 
-private _itemWeaponMG =
-[
-	//mgs
-
-	//bipods
-];
-
 private _itemWeaponSharpshooter =
 [
 	//============================================================
@@ -1052,6 +1107,8 @@ private _itemWeaponSharpshooter =
 	"rhs_weap_m14ebrri",
 	"rhs_weap_sr25",
 	"rhs_weap_sr25_ec",
+	
+	"Tier1_SR25_EC",
 
 	//7.62x54mmR
 	"CUP_srifle_SVD",
@@ -1096,6 +1153,9 @@ private _itemWeaponSharpshooter =
 	"rhsusf_acc_su230_mrds",
 	"rhsusf_acc_su230a", //zeroed for 7.62
 	"rhsusf_acc_su230a_mrds", //same but with a red dot
+	
+	"Tier1_razor_gen2_16",
+	"tier1_razor_gen2_16_vanilla",
 
 	//dovetail mounted
 	"CUP_optic_PSO_1",
@@ -1136,6 +1196,10 @@ private _itemSniper =
 	"optic_LRPS",
 	"CUP_optic_LeupoldMk4_25x50_LRT_pip",
 	"CUP_optic_SB_3_12x50_PMII",
+	
+	"Tier1_Shortdot_Geissele_Docter_Black",
+	"tier1_shortdot_geissele_black_vanilla",
+	"Tier1_Razor_Gen3_110_Geissele_Docter",
 
 	"rhsusf_acc_premier_mrds",
 	"rhsusf_acc_leupoldmk4_2",
@@ -1210,6 +1274,8 @@ private _itemWeaponGL =
 	"rhs_weap_hk416d145_m320",
 
 	"rhs_weap_m16a4_carryhandle_M203",
+	
+	"mjb_arifle_C7Bravo",
 
 	"rhs_weap_mk18_m320",
 
@@ -1236,6 +1302,7 @@ private _itemWeaponGL =
 
 	//7.62x51mm
 	"CUP_arifle_DSA_SA58_OSW_M203",
+	"CUP_arifle_Mk17_CQC_EGLM",
 
 	// Fancy mags
 	"CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_Tan_M",
@@ -1352,6 +1419,8 @@ private _itemWeaponMMG =
 
 	"rhs_weap_m240G",
 	"rhs_weap_m240B",
+	
+	"Tier1_MK48_Mod1",
 
 	"cup_optic_hensoldtzo",
 	"cup_optic_acog2",
@@ -1360,6 +1429,8 @@ private _itemWeaponMMG =
 	"rhsusf_acc_su230_mrds",
 	"rhsusf_acc_su230a",
 	"rhsusf_acc_su230a_mrds",
+	
+	"Tier1_Mk48Mod1_LA5_M600V_Black_FL",
 
 	"dzn_mg_tripod_universal",
 	"dzn_mg_tripod_m122a1_m60mount",
@@ -1426,20 +1497,32 @@ private _itemSF =
 	"CUP_smg_MP5SD6",
 	"CUP_sgun_AA12",
 
-	"rhs_weap_ak74mr",
-	"rhs_weap_asval_grip",
-	"rhs_20rnd_9x39mm_SP6",
-
 	"CUP_20Rnd_B_AA12_Buck_00",
 	"CUP_20Rnd_B_AA12_Slug",
 	"CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
 
+	"rhs_weap_ak74mr",
+	"rhs_weap_asval_grip",
+	"rhs_20rnd_9x39mm_SP6",
+
 	"rhs_weap_6p53",
 	"rhs_18rnd_9x21mm_7BT3",
 	"rhs_18rnd_9x21mm_7N29",
+	
+	"Tier1_SIG_MCX_115_Virtus_300BLK",
+	"Tier1_30Rnd_762x35_300BLK_RNBT_EMag",
+	"Tier1_30Rnd_762x35_300BLK_SMK_EMag",
+	"Tier1_30Rnd_762x35_300BLK_EMag",
+	
+	"Tier1_P320_TB",
+	"tier1_agency_compensator",
+	"tier1_sig_romeo1",
+	"muzzle_snds_l",
 
 	//Attachments
 	"cup_acc_flashlight_mp5sd",
+	"Tier1_SOCOM762MG_Black",
+	"Tier1_Agency_Compensator",
 
 	// SF Drip
 	"G_Bandanna_aviator",
@@ -1520,11 +1603,13 @@ private _itemTankCrew =
 	"ItemCompass",
 	"ItemWatch",
 	"ACE_MapTools",
+	"ACE_microDAGR",
 	"NVGoggles",
 	"NVGoggles_OPFOR",
 	"rhsgref_6b23_khaki",
-	"rhsusf_mbav_mg",
-	"rhsusf_oakley_goggles_blk"
+	"rhsusf_oakley_goggles_blk",
+    "Tier1_EXPS3_0_Black",
+    "Tier1_Larue_FUG_Black"
 ];
 
 private _itemHeloCrew =
@@ -1548,16 +1633,17 @@ private _itemHeloCrew =
 	"ItemCompass",
 	"ItemWatch",
 	"ACE_MapTools",
+	"ACE_microDAGR",
 	"NVGoggles",
 	"NVGoggles_OPFOR",
 	"G_Bandanna_aviator",
 	"rhsusf_mbav_light",
-	"rhsusf_mbav_mg"
+    "Tier1_EXPS3_0_Black",
+    "Tier1_Larue_FUG_Black"
 ];
 
 private _itemAirCrew =
 [
-	"muzzle_snds_l",
 	"U_I_pilotCoveralls",
 	"WU_O_PilotCoveralls",
 	"ACE_IR_Strobe_Item",
@@ -1573,6 +1659,7 @@ private _itemAirCrew =
 	"ItemCompass",
 	"ItemWatch",
 	"ACE_MapTools",
+	"ACE_microDAGR",
 	"G_Bandanna_aviator"
 ];
 
@@ -1646,7 +1733,6 @@ if (_hasApex) then {
 
 if (_hasContact) then {
 	_itemEquipment append [
-		"U_O_R_Gorka_01_black_F",
 		"G_Blindfold_01_black_F",
 		"G_Blindfold_01_white_F"
 	];
@@ -1666,6 +1752,8 @@ if (_hasMarksmen) then {
 		"MMG_02_black_F",
 		"MMG_02_sand_F"
 	];
+	
+	_itemSniper pushBack "optic_AMS";
 };
 
 //Add Existing Player Items
