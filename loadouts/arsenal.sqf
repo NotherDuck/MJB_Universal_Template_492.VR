@@ -1893,3 +1893,5 @@ _action =
 ] call ace_interact_menu_fnc_createAction;
 
 ["CAManBase", 1, ["ACE_SelfActions"], _action, true] call ace_interact_menu_fnc_addActionToClass;
+
+[player, currentWeapon player, currentMuzzle player] call ACE_SafeMode_fnc_lockSafety;
