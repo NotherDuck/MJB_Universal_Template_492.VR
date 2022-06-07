@@ -72,6 +72,7 @@
 			- MMG team (mjbLOVE to Banzerschreck), not shaking down AR yet
 			- Moved non-base/med backpacks into _itemPackMedium and _itemPackHeavy
 */
+#include "_arsenalMacros.hpp"
 
 //Variables
 private _unitRole = player getVariable ["tmf_assignGear_role",nil];
@@ -172,15 +173,18 @@ private _itemEquipment =
 	"rhsgref_Booniehat_alpen",
 
 	"H_Cap_blk",
-	"CUP_H_PMC_Cap_Back_Grey",
-	"CUP_H_PMC_Cap_Back_EP_Grey",
-	"CUP_H_PMC_Cap_EP_Grey",
 	"H_Cap_oli",
 	"H_Cap_tan",
-	"CUP_H_PMC_Cap_Back_Tan",
-	"CUP_H_PMC_Cap_Back_EP_Tan",
-	"CUP_H_PMC_Cap_EP_Tan",
+    "H_Cap_headphones",
+    "CUP_H_FR_Cap_Headset_Green",
+    "CUP_H_PMC_Cap_Burberry",
+    CUP_HAT(Burberry),
+    CUP_HAT(Grey),
+    CUP_HAT(tan),
+    "rhsgref_bcap_specter",
 	"rhsusf_bowman_cap",
+
+	"CUP_H_PMC_PRR_Headset",
 
 	// blyat
 	"rhs_ushanka",
@@ -211,7 +215,6 @@ private _itemEquipment =
 	"CUP_H_PMC_Beanie_Headphones_Black",
 	"CUP_H_PMC_Beanie_Khaki",
 	"CUP_H_PMC_Beanie_Headphones_Khaki",
-	"CUP_H_PMC_PRR_Headset",
 	"rhs_beanie_green",
 	"rhs_beanie",
 
@@ -408,10 +411,10 @@ private _itemMod =
 	"tier1_exps3_0_g33_riser_black_up",
 	"Tier1_EXPS3_0_G33_Riser_Tano_Up",
 	"Tier1_Romeo4T_BCD_G33_Black_Up",
-	"Tier1_Romeo4T_BCQ_G33_Black_Up",
-	"Tier1_Microt2_G33_Black_Up",
 	"Tier1_Romeo4T_BCD_G33_Riser_Black_Up",
+	"Tier1_Romeo4T_BCQ_G33_Black_Up",
 	"Tier1_Romeo4T_BCQ_G33_Riser_Black_Up",
+	"Tier1_Microt2_G33_Black_Up",
 	"Tier1_Microt2_G33_Riser_Black_Up",
 
 	//Dovetail (Ak Sights)
@@ -515,9 +518,9 @@ private _itemMod =
 	"Tier1_MW_NGAL_M600V_Black_FL",
 	"Tier1_Mk18_LA5_M600V_Black_FL",
 	"Tier1_Mk18_NGAL_M300C_Black_FL",
+	"Tier1_Mk18_NGAL_M603V_FL",
 	"Tier1_MP7_NGAL_M300C_Black_FL",
 	"Tier1_10_LA5_Side",
-	"Tier1_Mk18_NGAL_M603V_FL",
 	"Tier1_SCAR_NGAL_M300C_FL",
 	"Tier1_M4BII_NGAL_M300C_Black_FL",
 	"Tier1_SR25_LA5_Side"
@@ -1066,9 +1069,7 @@ private _itemWeaponARAmmo =
 	"CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249",
 	"CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249",
 	//Loose belts
-	"greenmag_beltlinked_556x45_basic_200",
-	"greenmag_beltlinked_556x45_basic_100",
-	"greenmag_beltlinked_556x45_basic_50",
+    GREENMAG_BELT(556x45),
 
 	//============================================================
 	//7.62x51mm
@@ -1077,9 +1078,7 @@ private _itemWeaponARAmmo =
 	"CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
 	"CUP_120Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
 	//Loose belts
-	"greenmag_beltlinked_762x51_basic_200",
-	"greenmag_beltlinked_762x51_basic_100",
-	"greenmag_beltlinked_762x51_basic_50",
+    GREENMAG_BELT(762x51),
 
 	//============================================================
 	//7.62x54mmR
@@ -1088,9 +1087,7 @@ private _itemWeaponARAmmo =
 	"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M",
 
 	//Loose belts
-	"greenmag_beltlinked_762x54_basic_200",
-	"greenmag_beltlinked_762x54_basic_100",
-	"greenmag_beltlinked_762x54_basic_50",
+    GREENMAG_BELT(762x54),
 
 	//Bling
 	"CUP_H_RUS_Altyn_Goggles",
@@ -1453,12 +1450,8 @@ private _itemWeaponMMGAmmo =
 	"mjb_130Rnd_338_Mag_trc_ylw",
 	"150Rnd_93x64_Mag",
 	"mjb_150Rnd_93x64_Mag_trc_ylw",
-	"greenmag_beltlinked_338_basic_200",
-	"greenmag_beltlinked_338_basic_100",
-	"greenmag_beltlinked_338_basic_50",
-	"greenmag_beltlinked_93x64_basic_200",
-	"greenmag_beltlinked_93x64_basic_100",
-	"greenmag_beltlinked_93x64_basic_50",
+    GREENMAG_BELT(338),
+    GREENMAG_BELT(93x64),
 	"Rangefinder",
 	"ACE_Vector",
 	"ace_csw_m220CarryTripod", // can deploy bipod on these
