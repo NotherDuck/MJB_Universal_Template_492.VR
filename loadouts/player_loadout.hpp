@@ -303,7 +303,7 @@ class sniper : basetrooper
 	};
 	sidearmWeapon[] = 
 	{
-		"CUP_hgun_MP7"
+		"rhsusf_weap_MP7A2_folded"
 	};
 	linkedItems[] += {
 		"Rangefinder"
@@ -718,7 +718,7 @@ class ceng : basetrooper
 	};
 	primaryWeapon[] =
 	{
-		"CUP_smg_MP7"
+		"rhsusf_weap_MP7A2"
 	};
 	scope[] = {
 		"CUP_optic_ZeissZPoint"
@@ -782,7 +782,7 @@ class crew : basetrooper
 	backpack[] = {};
 	primaryWeapon[] =
 	{
-		"CUP_smg_MP7"
+		"rhsusf_weap_MP7A2"
 	};
 	scope[] = {
 		"CUP_optic_ZeissZPoint"

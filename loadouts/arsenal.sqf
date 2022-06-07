@@ -537,6 +537,7 @@ private _itemReflexSight =
 	"cup_optic_eotech553_black",
 	"cup_optic_compm4",
 	"cup_optic_okp_7_rail",
+    "cup_optic_mepro",
 	"CUP_optic_MEPRO_openx_orange",
 	"CUP_optic_TrijiconRx01_black",
 	"CUP_optic_ZeissZPoint",
@@ -552,6 +553,10 @@ private _itemReflexSight =
 	"rhsusf_acc_t1_low_fwd",
 	
 	"Tier1_EXPS3_0_Tano",
+    "tier1_romeo4t_bcd_black",
+    "tier1_romeo4t_bcd_riser_black",
+    "tier1_romeo4t_bcq_black",
+    "tier1_romeo4t_bcq_riser_black",
 
 	//Dovetail (Ak Sights)
 	"CUP_optic_ekp_8_02",
@@ -605,6 +610,7 @@ private _itemWeaponPistol =
 	"greenmag_ammo_762x25_ball_30Rnd",
 
 	//Attachments
+    "optic_mrd_black",
 	"cup_acc_mk23_lam_f",
 	"CUP_acc_CZ_M3X",
 	"cup_acc_glock17_flashlight",
@@ -627,7 +633,6 @@ private _itemLeaderEquipment =
 	"6Rnd_45ACP_Cylinder",
 
 	//Cute attachments for leaders
-	"optic_mrd_black",
 	"muzzle_snds_l",
 	"cup_muzzle_snds_mk23",
 	"tier1_agency_compensator",
@@ -981,6 +986,7 @@ private _itemWeaponAR =
 	//5.56x45mm
 	//============================================================
 	"CUP_lmg_L110A1",
+    "CUP_lmg_minimi_railed",
 	"CUP_arifle_L86A2",
 	"CUP_arifle_Galil_556_black",
 
@@ -991,6 +997,7 @@ private _itemWeaponAR =
 	"rhs_weap_m27iar",
 	"rhs_weap_m27iar_grip",
 	
+    "Tier1_MK46_Mod0",
 	"Tier1_MK46_Mod1_Savit",
 
 	//============================================================
@@ -1864,7 +1871,7 @@ switch (true) do
 	};
 		case (_unitRole == "mmg") :
 	{
-		[arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponAR + _itemWeaponMG + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemSpecial + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponAR + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "ammg") :
 	{
