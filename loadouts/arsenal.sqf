@@ -183,6 +183,7 @@ private _itemEquipment =
     CUP_HAT(tan),
     "rhsgref_bcap_specter",
 	"rhsusf_bowman_cap",
+    "mjb_H_Cap_Voin",
 
 	"CUP_H_PMC_PRR_Headset",
 
@@ -1663,8 +1664,11 @@ private _itemAirCrew =
 	"G_Bandanna_aviator"
 ];
 
+private _itemMedical = [""];
+private _itemMedicalAdv = [""];
+
 if (_aceMedLoaded) then { //Check for ace med
-	private _itemMedical =
+	_itemMedical =
 	[
 		//Bandages
 		"ACE_fieldDressing",
@@ -1680,7 +1684,7 @@ if (_aceMedLoaded) then { //Check for ace med
 	];
 	{_x append _itemMedical} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
 	// Append ACE Med Items
-	private _itemMedicalAdv =
+	_itemMedicalAdv =
 	[
 		//Fluids
 		"ACE_bloodIV",
@@ -1841,6 +1845,8 @@ switch (true) do
 	case (_unitRole == "ceng") :
 	{
 		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemEngineer + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+
+        private _engibuttonId = [(_itemEngineer), "Engineer","\A3\ui_f\data\igui\cfg\actions\repair_ca.paa"] call ace_arsenal_fnc_addRightPanelButton;
 	};
 	case (_unitRole == "crew") :
 	{
@@ -1875,6 +1881,8 @@ switch (true) do
 		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 };
+
+private _buttonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa"] call ace_arsenal_fnc_addRightPanelButton;
 
 _action =
 [
