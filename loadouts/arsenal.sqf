@@ -1237,15 +1237,16 @@ private _itemSniper =
 	"rhsusf_acc_rotex_mp7",
 
 	"CUP_40Rnd_46x30_MP7",
-
+	"ACE_ATragMX"
+];
+private _itemSniperAmmo = [
 	"greenmag_ammo_127x99_basic_30Rnd",
 	"greenmag_ammo_127x99_basic_60Rnd",
 	"greenmag_ammo_127x108_basic_30Rnd",
 	"greenmag_ammo_127x108_basic_60Rnd",
 	"greenmag_ammo_338_basic_30Rnd",
 	"greenmag_ammo_338_basic_60Rnd",
-	"greenmag_ammo_46x30_basic_60Rnd",
-	"ACE_ATragMX"
+	"greenmag_ammo_46x30_basic_60Rnd"
 ];
 
 private _itemWeaponGL =
@@ -1314,6 +1315,8 @@ private _itemWeaponGL =
 	"CUP_30Rnd_TE1_Green_Tracer_762x39_AK15_Tan_M",
 	"CUP_30Rnd_556x45_TE1_Tracer_Green_AK19_Tan_M",
 	"CUP_30Rnd_680x43_Stanag_Tracer_Yellow",
+
+    "greenmag_ammo_680x43_tracer_60Rnd",
 
 	//============================================================
 	//Grenade Rounds
@@ -1820,11 +1823,11 @@ switch (true) do
 	};
 		case (_unitRole == "sniper") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemSpecial + _itemWeaponSharpshooter + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemWeaponSniper + _itemSniper + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemSpecial + _itemWeaponSharpshooter + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemWeaponSniper + _itemSniper + _itemSniperAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "spotter") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemSpecial + _itemWeaponSharpshooter + _itemWeaponRifle + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemSniper + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemSpecial + _itemWeaponSharpshooter + _itemWeaponRifle + _itemWeaponPistol + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemSniper + _itemSniperAmmo + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 	};
 		case (_unitRole == "sfsl") :
 	{
@@ -1844,9 +1847,10 @@ switch (true) do
 	};
 	case (_unitRole == "ceng") :
 	{
-		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemEngineer + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemEngineer + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
-        private _engibuttonId = [(_itemEngineer), "Engineer","\A3\ui_f\data\igui\cfg\actions\repair_ca.paa"] call ace_arsenal_fnc_addRightPanelButton;
+        if (isNil "engiButtonId") then {engiButtonId = -1;};
+        engiButtonId = [(_itemEngineer), "Engineer","\A3\ui_f\data\igui\cfg\actions\repair_ca.paa", engiButtonId] call ace_arsenal_fnc_addRightPanelButton;
 	};
 	case (_unitRole == "crew") :
 	{
@@ -1882,7 +1886,18 @@ switch (true) do
 	};
 };
 
-private _buttonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa"] call ace_arsenal_fnc_addRightPanelButton;
+if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
+  private _greenmagArray = getArray (configFile >> "CfgPatches" >> "greenmag_main" >> "weapons");
+  private _greenmagCup = [];
+  if (isClass (configFile >> "CfgPatches" >> "greenmag_cup")) then {_greenmagCup = getArray (configFile >> "CfgPatches" >> "greenmag_cup" >> "weapons");};
+  private _boxes = (_itemWeaponAmmo + _itemWeaponCQB + _itemWeaponGL + _itemWeaponPistol + ["greenmag_ammo_50AE_ball_30Rnd"] + _itemSniperAmmo);
+  private _belts = (_itemWeaponARAmmo + _itemWeaponMMGAmmo);
+  if (isNil "greenmagButtonId") then {greenmagButtonId = -1;};
+  greenmagButtonId = [(_boxes + _belts + _greenmagArray + _greenmagCup), "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
+};
+
+if (isNil "medicalButtonId") then {medicalButtonId = -1;};
+medicalButtonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa", medicalButtonId] call ace_arsenal_fnc_addRightPanelButton;
 
 _action =
 [
