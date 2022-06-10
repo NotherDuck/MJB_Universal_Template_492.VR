@@ -1887,13 +1887,9 @@ switch (true) do
 };
 
 if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
-  private _greenmagArray = getArray (configFile >> "CfgPatches" >> "greenmag_main" >> "weapons");
-  private _greenmagCup = [];
-  if (isClass (configFile >> "CfgPatches" >> "greenmag_cup")) then {_greenmagCup = getArray (configFile >> "CfgPatches" >> "greenmag_cup" >> "weapons");};
-  private _boxes = (_itemWeaponAmmo + _itemWeaponCQB + _itemWeaponGL + _itemWeaponPistol + ["greenmag_ammo_50AE_ball_30Rnd"] + _itemSniperAmmo);
-  private _belts = (_itemWeaponARAmmo + _itemWeaponMMGAmmo);
+  private _greenmagArray = "getText (_x >> 'author') isEqualTo '[W] Miller' && {getText (_x >> 'displayName') isNotEqualTo 'Speedloader'}" configClasses (configFile >> "CfgWeapons") apply {configName _x};
   if (isNil "greenmagButtonId") then {greenmagButtonId = -1;};
-  greenmagButtonId = [(_boxes + _belts + _greenmagArray + _greenmagCup), "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
+  greenmagButtonId = [_greenmagArray, "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
 };
 
 if (isNil "medicalButtonId") then {medicalButtonId = -1;};
