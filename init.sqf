@@ -10,15 +10,18 @@
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
 addMissionEventHandler ["OnUserAdminStateChanged", {    // Admin JIP handler
-  params ["_networkId", "_loggedIn", "_votedIn"];  
+  params ["_networkId", "_loggedIn"];  
     
-  if (time > 0 && {_loggedIn || _votedIn}) then {  
-    [_networkId] spawn { params ["_newAdmin"];  
+  if (time > 0 && {_loggedIn}) then {  
+    [_networkId] spawn { params ["_newAdmin"];
       waitUntil {(allPlayers findIf {_newAdmin == getPlayerID _x}) > -1};  
       private _JIPAdmin = (allPlayers select (allPlayers findIf {_newAdmin == getPlayerID _x}));  
       if (fileExists "briefing\admin.sqf") then {  
-        [(compile preprocessfilelinenumbers "briefing\admin.sqf")] remoteExec ["call", _JIPAdmin];  
-        ["Admin briefing granted."] remoteExec ["systemChat", _JIPAdmin];
+        [{ if (isNil "mjb_adminJIPbrief") then {
+          mjb_adminJIPbrief = true;
+          compile preprocessfilelinenumbers "briefing\admin.sqf";
+          systemChat "Admin briefing granted."};
+        }] remoteExec ["call", _JIPAdmin];
       } else {  
         ["Warning, admin briefing not found. Expected: MISSION_ROOT\briefing\admin.sqf"] remoteExec ["systemChat", _JIPAdmin]; };  
   }; };    
