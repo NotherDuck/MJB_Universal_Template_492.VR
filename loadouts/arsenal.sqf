@@ -524,7 +524,9 @@ private _itemMod =
 	"Tier1_10_LA5_Side",
 	"Tier1_SCAR_NGAL_M300C_FL",
 	"Tier1_M4BII_NGAL_M300C_Black_FL",
-	"Tier1_SR25_LA5_Side"
+	"Tier1_SR25_LA5_Side",
+    "tier1_mcx_ngal_m600v_black",
+    "tier1_mcx_la5_side"
 ];
 
 private _itemReflexSight =
@@ -683,6 +685,8 @@ private _itemWeaponRifle =
 
 	"rhs_weap_vhsd2",
 	"rhs_weap_vhsd2_ct15x",
+
+    "Tier1_SIG_MCX_115_Virtus",
 
 	//============================================================
 	//5.45x39mm
@@ -1849,8 +1853,8 @@ switch (true) do
 	{
 		[arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemEngineer + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
 
-        if (isNil "engiButtonId") then {engiButtonId = -1;};
-        engiButtonId = [(_itemEngineer), "Engineer","\A3\ui_f\data\igui\cfg\actions\repair_ca.paa", engiButtonId] call ace_arsenal_fnc_addRightPanelButton;
+        if (isNil "mjb_engiButtonId") then {mjb_engiButtonId = -1;};
+        mjb_engiButtonId = [(_itemEngineer), "Engineer","\A3\ui_f\data\igui\cfg\actions\repair_ca.paa", mjb_engiButtonId] call ace_arsenal_fnc_addRightPanelButton;
 	};
 	case (_unitRole == "crew") :
 	{
@@ -1888,12 +1892,12 @@ switch (true) do
 
 if (isClass (configFile >> "CfgPatches" >> "greenmag_main")) then {
   private _greenmagArray = "getText (_x >> 'author') isEqualTo '[W] Miller' && {getText (_x >> 'displayName') isNotEqualTo 'Speedloader'}" configClasses (configFile >> "CfgWeapons") apply {configName _x};
-  if (isNil "greenmagButtonId") then {greenmagButtonId = -1;};
-  greenmagButtonId = [_greenmagArray, "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
+  if (isNil "mjb_greenmagButtonId") then {mjb_greenmagButtonId = -1;};
+  mjb_greenmagButtonId = [_greenmagArray, "Greenmag","\A3\ui_f\data\igui\cfg\weaponicons\MG_ca.paa", mjb_greenmagButtonId] call ace_arsenal_fnc_addRightPanelButton;
 };
 
-if (isNil "medicalButtonId") then {medicalButtonId = -1;};
-medicalButtonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa", medicalButtonId] call ace_arsenal_fnc_addRightPanelButton;
+if (isNil "mjb_medicalButtonId") then {mjb_medicalButtonId = -1;};
+mjb_medicalButtonId = [(["diw_armor_plates_main_plate","diw_armor_plates_main_autoInjector","FirstAidKit","Medikit"] + _itemMedical + _itemMedicalAdv), "Medical/Plates","\A3\ui_f\data\igui\cfg\cursors\unitHealer_ca.paa", mjb_medicalButtonId] call ace_arsenal_fnc_addRightPanelButton;
 
 _action =
 [
