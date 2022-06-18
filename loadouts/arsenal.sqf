@@ -1712,7 +1712,7 @@ if (_aceMedLoaded) then { //Check for ace med
   _itemMedic append _itemMedicalAdv;
 } else { // Add base med items
 	{_x pushBack "FirstAidKit";} forEach [_itemEquipment, _itemTankCrew, _itemHeloCrew, _itemAirCrew];
-	_itemMedic pushBack "Medikit";
+	_itemMedic append ["Medikit", "diw_armor_plates_main_autoInjector"];
 };
 
 private _ownedDLCs = getDLCs 1; // DLC check, Credit to MajorDanvers
