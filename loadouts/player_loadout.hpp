@@ -112,7 +112,7 @@ class basetrooper
 	};
 	goggles[] = {};
 	hmd[] = {
-		"NVGoggles"
+		"CUP_NVG_GPNVG_black"
 	};
 	
 	//All Randomized. Add Primary Weapon and attachments.
@@ -405,6 +405,13 @@ class cls : r
 class lat : r
 {
 	displayName = "Trooper (Light Anti-tank)";
+	items[] = {
+		"greenmag_item_speedloader",
+		"ACE_RangeCard",
+		"ACE_MapTools",
+		"HandGrenade",
+		LIST_2("SmokeShell")
+	};
 	secondaryWeapon[] = {
 		"CUP_launch_M136"
 	};
