@@ -31,6 +31,6 @@ addMissionEventHandler ["OnUserAdminStateChanged", {    // Admin JIP handler
 [{
     params ["_unit", "_object", "_cost"];
 	private _interactable = (_object isKindOf "AllVehicles" || {_object isKindOf "ReammoBox" || {_object isKindOf "ThingX"}});
-    private _return = (_cost < 26 || { _interactable || {(getPosATL _object) select 2 < 0.5}});
+    private _return = (_cost < 36 || { _interactable || {(getPosATL _object) select 2 < 0.5}});
     _return
 }] call ace_fortify_fnc_addDeployHandler;

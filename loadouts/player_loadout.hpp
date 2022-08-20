@@ -112,7 +112,7 @@ class basetrooper
 	};
 	goggles[] = {};
 	hmd[] = {
-		"NVGoggles"
+		"CUP_NVG_GPNVG_black"
 	};
 	
 	//All Randomized. Add Primary Weapon and attachments.
@@ -384,8 +384,12 @@ class cls : r
 	backpack[] = {
 		"B_Carryall_oucamo"
 	};
-	magazines[] += {
-		"greenmag_ammo_556x45_basic_60Rnd"
+	magazines[] = {
+		LIST_2("ACE_M84"),
+		"SmokeShellRed",
+		"CUP_15Rnd_9x19_M9",
+		LIST_7("CUP_30Rnd_556x45_PMAG_QP")//,
+        //LIST_5("diw_armor_plates_main_autoInjector")
 	};
 	backpackItems[] =
 	{
@@ -401,6 +405,13 @@ class cls : r
 class lat : r
 {
 	displayName = "Trooper (Light Anti-tank)";
+	items[] = {
+		"greenmag_item_speedloader",
+		"ACE_RangeCard",
+		"ACE_MapTools",
+		"HandGrenade",
+		LIST_2("SmokeShell")
+	};
 	secondaryWeapon[] = {
 		"CUP_launch_M136"
 	};
@@ -571,16 +582,17 @@ class sfmed : cls
 		"greenmag_item_speedloader",
 		"FirstAidKit",
 		LIST_3("ACE_CableTie"),
-		LIST_2("ACE_IR_Strobe_Item")
+		LIST_2("ACE_IR_Strobe_Item"),
+		"HandGrenade",
+		LIST_2("SmokeShellPurple")
 	};
 	magazines[] = {
-		LIST_4("CUP_20Rnd_B_AA12_Slug"),
+		LIST_3("CUP_20Rnd_B_AA12_Slug"),
 		"SmokeShellBlue",
-		LIST_2("SmokeShellPurple"),
 		LIST_2("SmokeShellRed"),
-		LIST_2("HandGrenade"),
 		LIST_2("ACE_CTS9"),
-		"CUP_12Rnd_45ACP_mk23"
+		"CUP_12Rnd_45ACP_mk23"//,
+        //LIST_5("diw_armor_plates_main_autoInjector")
 	};
 	backpackItems[] =
 	{

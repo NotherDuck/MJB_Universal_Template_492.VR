@@ -78,8 +78,8 @@ class ACEX_Fortify_Presets {
 			{"ClutterCutter_small_2_EP1", 10},
 			{"TyreBarrier_01_black_F", 15},
 			{"Land_Misc_ConcPipeline_EP1", 25},
-			{"Land_ConcretePipe_F", 25},
-			{"Land_BagBunker_Small_F", 50}
+			{"Land_BagBunker_Small_F", 35},
+			{"Land_fort_rampart", 40} // replace with one appropriate to weather if needed
 		};
 	};
 };
