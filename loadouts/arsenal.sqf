@@ -1360,7 +1360,6 @@ private _itemWeaponSFSL =
 
     "rhs_weap_ak74mr_gp25",
     "rhs_weap_M320",
-    "rhs_mag_m4009",
     "rhs_VG40SZ",
     "rhs_VG40MD"
 ];
