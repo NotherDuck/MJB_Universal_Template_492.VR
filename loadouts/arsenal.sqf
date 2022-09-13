@@ -530,7 +530,8 @@ private _itemMod =
     "Tier1_M4BII_NGAL_M300C_Black_FL",
     "Tier1_SR25_LA5_Side",
     "tier1_mcx_ngal_m600v_black",
-    "tier1_mcx_la5_side"
+    "tier1_mcx_la5_side",
+    "tier1_mk46mod0_la5_m600v_blackl"
 ];
 
 private _itemReflexSight =
