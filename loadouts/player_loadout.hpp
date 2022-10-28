@@ -153,8 +153,8 @@ class basetrooper
 	};
 	
 	// This is executed (server-side) after the unit init is complete. Argument: _this = _unit.
-	code = "0 = _this execVM ""loadouts\TMFspawnFix.sqf"";"; /*
-	Sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
+	code = "_this spawn mjb_arsenal_fnc_tmfSpawnFix;";//"0 = _this execVM ""loadouts\TMFspawnFix.sqf"";"; //
+    /* tmfSpawnFix sets stam/fatigue off, iFatigue sway, and adds APS stuff for TMF Respawns */
 };
 
 
