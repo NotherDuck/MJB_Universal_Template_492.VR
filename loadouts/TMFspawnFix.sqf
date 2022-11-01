@@ -13,7 +13,8 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
     player call diw_armor_plates_main_fnc_fillVestWithPlates;
     player call diw_armor_plates_main_fnc_updatePlateUi;
     if !(isClass(configFile >> "CfgPatches" >> "ace_medical_engine")) then {
-        player setVariable ["diw_armor_plates_main_hp", (diw_armor_plates_main_maxPlayerHp+0.01), true];
+        private _maxHp = player getVariable ["diw_armor_plates_main_maxHp", diw_armor_plates_main_maxPlayerHp];
+        player setVariable ["diw_armor_plates_main_hp", (_maxHp+0.01), true];
         player call diw_armor_plates_main_fnc_updateHPUi;
     };
     call babe_em_fnc_init;
