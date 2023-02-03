@@ -292,13 +292,23 @@ if (_winter) then {
         "CUP_I_B_PMC_Unit_34",
 
         "CUP_H_PMC_Beanie_Winter",
-        "CUP_H_PMC_Beanie_Headphones_Winter"
+        "CUP_H_PMC_Beanie_Headphones_Winter",
+
+        "CUP_O_RUS_Patrol_bag_Winter"
     ];
     _itemEquipment append _winterCamo;
 };
 
 private _itemPackHeavy =
 [
+    "mjb_carryallplus_cbr",
+    "mjb_carryallplus_taiga_F",
+    "mjb_carryallplus_eaf_F",
+    "mjb_carryallplus_oli",
+    "mjb_carryallplus_grey",
+    "mjb_carryallplus_khaki",
+    "mjb_carryallplus_olive",
+
     "B_Bergen_mcamo_F",
     "B_Bergen_tna_F",
     "B_Bergen_dgtl_F",
@@ -722,6 +732,8 @@ private _itemWeaponRifle =
     "rhs_weap_akmn",
     "rhs_weap_ak103",
     "rhs_weap_ak103_zenitco01",
+    "rhs_weap_pm63",
+    "rhs_weap_m70ab2",
 
     //============================================================
     //7.62x51mm
@@ -774,7 +786,8 @@ private _itemWeaponCarbine =
     "CUP_arifle_Sa58_Carbine_RIS_AFG",
 
     "rhs_weap_ak104",
-    "rhs_weap_ak104_zenitco01"
+    "rhs_weap_ak104_zenitco01",
+    "rhs_weap_m92"
 ];
 
 private _itemWeaponAmmo =
@@ -1144,6 +1157,7 @@ private _itemWeaponSharpshooter =
     "rhs_weap_svds",
     "rhs_weap_svdp",
 
+    "ace_tripod",
     "ace_csw_m220CarryTripod", // can deploy bipod on these
     "ace_csw_spg9CarryTripod",
 
@@ -1486,6 +1500,7 @@ private _itemWeaponMMGAmmo =
     GREENMAG_BELT(93x64),
     "Rangefinder",
     "ACE_Vector",
+    "ace_tripod",
     "ace_csw_m220CarryTripod", // can deploy bipod on these
     "ace_csw_spg9CarryTripod"
 ];
@@ -1510,6 +1525,16 @@ private _itemSF =
     "CUP_V_B_Ciras_Khaki2",
     "CUP_V_B_Ciras_Olive",
     "CUP_V_B_Ciras_Olive2",
+
+    "mjb_carryallplus_cbr",
+    "mjb_carryallplus_taiga_F",
+    "mjb_carryallplus_eaf_F",
+    "mjb_carryallplus_oli",
+    "mjb_carryallplus_black",
+    "mjb_carryallplus_grey",
+    "mjb_carryallplus_khaki",
+    "mjb_carryallplus_olive",
+
     "Mechanism",
     "G2_Gunslinger",
     "Paratus",
