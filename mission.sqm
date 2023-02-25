@@ -168189,7 +168189,7 @@ class Mission
 					{
 						rank="CAPTAIN";
 						name="SF2L_2";
-						description="Team Leader@Special Forces Team 1";
+						description="Team Leader@Special Forces Team 2";
 						isPlayable=1;
 						class Inventory
 						{
@@ -169747,7 +169747,7 @@ class Mission
 					{
 						rank="CAPTAIN";
 						name="SF2L";
-						description="Team Leader@Special Forces Team 1";
+						description="Team Leader@Special Forces Team 2";
 						isPlayable=1;
 						class Inventory
 						{
@@ -171304,7 +171304,7 @@ class Mission
 					{
 						rank="CAPTAIN";
 						name="SF2L_1";
-						description="Team Leader@Special Forces Team 1";
+						description="Team Leader@Special Forces Team 2";
 						isPlayable=1;
 						class Inventory
 						{
