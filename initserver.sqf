@@ -1,3 +1,5 @@
+if (!isNil "mjb_arsenal_fnc_serverInit") exitWith {systemChat "Using init from MJB ARMA V2, changes to init scripts in the mission folder will not be reflected. Comment the first line of init scripts you're making changes to."; [] call mjb_arsenal_fnc_serverInit;};
+// Comment above line when making changes
 
 SafestartisActive = true;
 publicVariable "SafestartisActive";

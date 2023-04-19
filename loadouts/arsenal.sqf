@@ -465,6 +465,8 @@ private _itemMod =
     "CUP_muzzle_snds_KZRZP_AK762",
     "CUP_muzzle_snds_groza",
 
+	"cup_muzzle_snds_68spc",
+
     "rhsusf_acc_nt4_black", // New nicer 5.56/mk20 suppressors
     "rhsusf_acc_nt4_tan",
     "rhsusf_acc_rotex5_grey",
