@@ -14,6 +14,8 @@
         - 2022-02-11: Add MMG team (mjbLOVE for Banzerschreck)
 */
 
+// CHANGES HERE WILL NOT BE REFLECTED UNLESS A LINE IN DESCRIPTION.ext IS UNCOMMENTED
+
 // Weaponless Baseclass
 class basetrooper 
 {
@@ -591,8 +593,8 @@ class sfmed : cls
 		"SmokeShellBlue",
 		LIST_2("SmokeShellRed"),
 		LIST_2("ACE_CTS9"),
-		"CUP_12Rnd_45ACP_mk23"//,
-        //LIST_5("diw_armor_plates_main_autoInjector")
+		"CUP_12Rnd_45ACP_mk23",
+        LIST_5("diw_armor_plates_main_autoInjector")
 	};
 	backpackItems[] =
 	{

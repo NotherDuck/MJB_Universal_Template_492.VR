@@ -1,4 +1,8 @@
-0 = execVM 'loadouts\arsenal.sqf';
+if (!isNil "mjb_arsenal_fnc_playerLocalInit") exitWith {[] call mjb_arsenal_fnc_playerLocalInit;};
+// Comment above line when making changes
+
+//0 = execVM 'loadouts\arsenal.sqf'; // uncomment this
+[] call mjb_arsenal_fnc_arsenal; // and comment this if changing arsenal
 
 /* if (SafestartisActive == false) then
 {

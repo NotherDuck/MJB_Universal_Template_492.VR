@@ -4,6 +4,8 @@
 	*Faction: Example Russian Forces (EMR Flora)
 */
 
+// CHANGES HERE WILL NOT BE REFLECTED UNLESS A LINE IN DESCRIPTION.ext IS UNCOMMENTED
+
 // Weaponless Baseclass
 class baseMan 
 {
@@ -69,12 +71,13 @@ class baseMan
 	magazines[] = {};
 	items[] = 
 	{
-		LIST_2("ACE_fieldDressing"),
-		LIST_2("ACE_packingBandage"),
-		LIST_2("ACE_quikclot"),
-		"ACE_tourniquet",
-		"ACE_morphine",
-		"ACE_splint"
+		LIST_2("FirstAidKit")
+		//LIST_2("ACE_fieldDressing"),
+		//LIST_2("ACE_packingBandage"),
+		//LIST_2("ACE_quikclot"),
+		//"ACE_tourniquet",
+		//"ACE_morphine",
+		//"ACE_splint"
 	};
 	
 	// These are added directly into their respective slots

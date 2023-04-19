@@ -40,17 +40,32 @@ class CfgDebriefing
 
 class CfgLoadouts
 {
-	class PLAYER_LOADOUT
-	{
-		displayName = "Example Player Loadout";
-		#include "loadouts\player_loadout.hpp"
-	};
-	class ENEMY_LOADOUT
-	{
-		displayName = "Example Enemy Loadout";
-		#include "loadouts\enemy_loadout.hpp"
-	};
-};
+	#if __has_include("\z\mjb\addons\arsenal\player_loadout.hpp")
+		import rats from CfgLoadouts;
+		import example_enemy from CfgLoadouts;
+		class PLAYER_LOADOUT : rats
+		{
+			//displayName = "Example Player Loadout";
+			//#include "loadouts\player_loadout.hpp" // Uncomment if altering player loadouts
+		};
+		class xENEMY_LOADOUT : example_enemy
+		{
+			//displayName = "xExample Enemy Loadout";
+			//#include "loadouts\enemy_loadout.hpp" // Uncomment if altering enemy loadouts
+		};
+	#else
+		class PLAYER_LOADOUT
+		{
+			displayName = "Example Player Loadout";
+			#include "loadouts\player_loadout.hpp"
+		};
+		class xENEMY_LOADOUT
+		{
+			displayName = "Example Enemy Loadout";
+			#include "loadouts\enemy_loadout.hpp"
+		};
+	#endif
+};//*/
 
 
 class CfgDebriefingSections
@@ -66,7 +81,7 @@ class CfgDebriefingSections
 		variable = "acex_killTracker_outputText";
 	};
 };
-
+/*/ Moved to MJB ARMA V2, can be altered here
 class ACEX_Fortify_Presets {
 	class rats {
 		displayName = "RATS";
@@ -82,4 +97,4 @@ class ACEX_Fortify_Presets {
 			{"Land_fort_rampart", 40} // replace with one appropriate to weather if needed
 		};
 	};
-};
+};//*/
