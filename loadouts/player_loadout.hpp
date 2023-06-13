@@ -14,7 +14,9 @@
         - 2022-02-11: Add MMG team (mjbLOVE for Banzerschreck)
 */
 
-// CHANGES HERE WILL NOT BE REFLECTED UNLESS A LINE IN DESCRIPTION.ext IS UNCOMMENTED
+// !!!!
+// CHANGES HERE WILL NOT BE REFLECTED UNLESS A LINE IN description.ext IS UNCOMMENTED
+// !!!!
 
 // Weaponless Baseclass
 class basetrooper 

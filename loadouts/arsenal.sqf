@@ -122,6 +122,23 @@ private _itemEquipment =
     "CUP_U_C_Tracksuit_03",
     "CUP_U_C_Tracksuit_04",
 
+    "CUP_U_B_BDUv2_gloves_Tigerstripe",
+    "CUP_U_B_BDUv2_roll2_gloves_Tigerstripe",
+    "CUP_U_B_BDUv2_roll_gloves_Tigerstripe",
+    "CUP_U_B_BDUv2_gloves_Urban",
+    "CUP_U_B_BDUv2_roll2_gloves_Urban",
+    "CUP_U_B_BDUv2_roll_gloves_Urban",
+    "CUP_U_CRYE_G3C_AOR2",
+    "CUP_U_CRYE_G3C_AOR1",
+    "CUP_U_CRYE_G3C_M81",
+    "CUP_U_CRYE_MCAM_NP_Full",
+    "CUP_U_CRYE_MCAM_NP_Roll",
+    "CUP_U_CRYE_RGR_Full",
+    "CUP_U_CRYE_RGR_Roll",
+    "CUP_U_B_USMC_FROG1_WMARPAT",
+    "CUP_U_B_USMC_FROG2_DMARPAT",
+    "rhs_uniform_FROG01_wd",
+
     //============================================================
     //Vests
     //============================================================
@@ -132,11 +149,27 @@ private _itemEquipment =
     "CUP_V_CZ_NPP2006_nk_black",
     "CUP_V_CZ_NPP2006_nk_vz95",
     "CUP_V_CZ_NPP2006_nk_des",
+
+    "Gjel_vest",
+    "GjelBlackRock_vest",
+    "GjelThunderbolt_vest",
+    "GjelTriton_vest",
+    "M1_vest",
+    "M2_vest",
+    "Module3m_vest",
     "Module3mAssault_vest",
-    "Module3mTV109_vest",
     "Module3mD3CRX_vest",
     "Module3mThunderbolt_vest",
     "Module3mTriton_vest",
+    "Module3mTV109_vest",
+    "Slick_vest", 
+    "SlickMK3_vest",
+    "SlickBlackRock_vest",
+    "SlickTV109_vest",
+	"Thorcrv_vest",
+    "ThorcrvBlackRock_vest",
+	"ThorcrvThunderbolt_vest",
+	"ThorcrvTriton_vest",
 
     //============================================================
     //Backpacks
@@ -159,6 +192,51 @@ private _itemEquipment =
     //============================================================
     //Helmets
     //============================================================
+
+    "H_HelmetB_Enh_tna_F",
+    "H_HelmetSpecB",
+    "H_HelmetSpecB_blk",
+    "H_HelmetSpecB_paint2",
+    "H_HelmetSpecB_paint1",
+    "H_HelmetSpecB_sand",
+    "H_HelmetSpecB_snakeskin",
+    "H_HelmetSpecB_wdl",
+
+    "mjb_H_HelmetSpecB_winter",
+
+    "CUP_H_RUS_K6_3_black",
+    "CUP_H_RUS_K6_3_Goggles_black",
+
+    //============================================================
+    //ACRE radio
+    //============================================================
+    "ACRE_PRC343",
+
+    //============================================================
+    //Tools and misc
+    //============================================================
+    //ACE
+    "ACE_Flashlight_XL50",
+    "ACE_MapTools",
+    "ACE_RangeCard",
+    "ACE_IR_Strobe_Item",
+
+    //BIS
+    "ItemCompass",
+    "ItemMap",
+    "ItemWatch",
+    "Laserbatteries",
+    "ItemGPS",
+    "ACE_microDAGR",
+
+    //Diwako
+    "diw_armor_plates_main_plate",
+
+    //Greenmag speedloader
+    "greenmag_item_speedloader"
+];
+
+private _itemHats = [
     "H_Bandanna_gry",
     "H_Bandanna_camo",
     "H_Bandanna_sgg",
@@ -199,21 +277,6 @@ private _itemEquipment =
     "CUP_H_C_Ushanka_04",
     "CUP_H_C_Ushanka_03",
 
-
-    "H_HelmetB_Enh_tna_F",
-    "H_HelmetSpecB",
-    "H_HelmetSpecB_blk",
-    "H_HelmetSpecB_paint2",
-    "H_HelmetSpecB_paint1",
-    "H_HelmetSpecB_sand",
-    "H_HelmetSpecB_snakeskin",
-    "H_HelmetSpecB_wdl",
-
-    "mjb_H_HelmetSpecB_winter",
-
-    "CUP_H_RUS_K6_3_black",
-    "CUP_H_RUS_K6_3_Goggles_black",
-
     "H_Watchcap_blk",
     "H_Watchcap_khk",
     "H_Watchcap_cbr",
@@ -232,36 +295,9 @@ private _itemEquipment =
     "rhs_6m2_nvg",
     "rhs_6m2_1_nvg",
     "rhs_facewear_6m2",
-    "rhs_facewear_6m2_1",
-
-    //============================================================
-    //ACRE radio
-    //============================================================
-    "ACRE_PRC343",
-
-    //============================================================
-    //Tools and misc
-    //============================================================
-    //ACE
-    "ACE_Flashlight_XL50",
-    "ACE_MapTools",
-    "ACE_RangeCard",
-    "ACE_IR_Strobe_Item",
-
-    //BIS
-    "ItemCompass",
-    "ItemMap",
-    "ItemWatch",
-    "Laserbatteries",
-    "ItemGPS",
-    "ACE_microDAGR",
-
-    //Diwako
-    "diw_armor_plates_main_plate",
-
-    //Greenmag speedloader
-    "greenmag_item_speedloader"
+    "rhs_facewear_6m2_1"
 ];
+_itemEquipment append _itemHats;
 
 private _itemNVG =
 [
@@ -558,7 +594,7 @@ private _itemMod =
     "Tier1_SR25_LA5_Side",
     "tier1_mcx_ngal_m600v_black",
     "tier1_mcx_la5_side",
-    "tier1_mk46mod0_la5_m600v_blackl"
+    "tier1_mk46mod0_la5_m600v_black"
 ];
 
 private _itemReflexSight =
@@ -1344,12 +1380,9 @@ private _itemWeaponGL =
 
     "rhs_weap_ak74m_gp25",
 
-    "CUP_arifle_ACR_EGLM_blk_68",
-
     //7.62x39mm
     "CUP_arifle_AKM_GL",
     "CUP_arifle_AKM_GL_top_rail",
-    "CUP_arifle_AK15_GP34_bicolor",
     "CUP_arifle_OTS14_GROZA_762_GL",
     "CUP_arifle_Sa58RIS2_gl",
 
@@ -1358,6 +1391,11 @@ private _itemWeaponGL =
     //7.62x51mm
     "CUP_arifle_DSA_SA58_OSW_M203",
     "CUP_arifle_Mk17_CQC_EGLM",
+
+
+
+    "CUP_arifle_ACR_EGLM_blk_68",
+    "CUP_arifle_AK15_GP34_bicolor",
 
     // Fancy mags
     "CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_Tan_M",
@@ -1653,6 +1691,13 @@ private _itemEngineer =
     "B_UGV_02_Demining_backpack_F"
 ];
 
+private _sideID = ((side player) call BIS_fnc_sideID);
+private _sideTerminal = ["O_UavTerminal","B_UavTerminal","I_UavTerminal","C_UavTerminal","","","","","",""] select _sideID;
+private _itemUAVTermial = [
+    _sideTerminal
+];
+_itemEngineer append _itemUAVTermial;
+
 private _itemTankCrew =
 [
     "diw_armor_plates_main_plate",
@@ -1662,6 +1707,7 @@ private _itemTankCrew =
     "CUP_V_PMC_CIRAS_Coyote_Veh",
     "CUP_V_PMC_CIRAS_OD_Veh",
     "ACRE_PRC148",
+    "ACRE_PRC343",
     "SmokeShellBlue",
     "H_HelmetCrew_I",
     "U_B_CombatUniform_mcam_W",
@@ -1690,6 +1736,7 @@ private _itemTankCrew =
     "Tier1_EXPS3_0_Black",
     "Tier1_Larue_FUG_Black"
 ];
+_itemTankCrew append _itemHats;
 _itemTankCrew append _itemNVG;
 _itemTankCrew append _itemWeaponMelee;
 
@@ -1702,6 +1749,7 @@ private _itemHeloCrew =
     "CUP_V_PMC_CIRAS_Coyote_Veh",
     "CUP_V_PMC_CIRAS_OD_Veh",
     "ACRE_PRC148",
+    "ACRE_PRC343",
     "SmokeShellBlue",
     "H_PilotHelmetHeli_B",
     "WU_B_HeliPilotCoveralls",
@@ -1728,6 +1776,7 @@ private _itemHeloCrew =
     "Tier1_EXPS3_0_Black",
     "Tier1_Larue_FUG_Black"
 ];
+_itemHeloCrew append _itemHats;
 _itemHeloCrew append _itemNVG;
 _itemHeloCrew append _itemWeaponMelee;
 
@@ -1738,6 +1787,7 @@ private _itemAirCrew =
     "ACE_IR_Strobe_Item",
     "greenmag_item_speedloader",
     "ACRE_PRC148",
+    "ACRE_PRC343",
     "ACE_Chemlight_UltraHiOrange",
     "SmokeShellOrange",
     "H_PilotHelmetFighter_B",
@@ -1751,6 +1801,7 @@ private _itemAirCrew =
     "ACE_microDAGR",
     "G_Bandanna_aviator"
 ];
+_itemAirCrew append _itemHats;
 
 private _itemMedical = [""];
 private _itemMedicalAdv = [""];
@@ -1856,6 +1907,7 @@ if (_hasMarksmen) then {
 
 //Add Existing Player Items
 waitUntil { !isNull player }; // should prevent FAKs/Medikits from adding when ACE enabled.
+
 private _exWeap = weaponsItems player; // Weapons, attachments, loaded mags/ub
 for "_y" from 0 to (count _exWeap - 1) do {
     {
@@ -1877,6 +1929,8 @@ for [{_i = 2}, {_i < 623}, {_i = _i + 24}] do // skips Beltstaff pants
 };
 for "_i" from (1) to (49) do { _tarkovuniforms pushback ("Tarkov_Uniforms_Scavs_" + str _i) };
 
+private _unitRole = (player getVariable ["tmf_assignGear_role",typeOf player]);
+private _leaderRole = ["tl","sl","B_officer_F","B_Soldier_SL_F"];
 //Match unitrole name with the classnames in loadout.
 switch (true) do
 {
@@ -1923,22 +1977,38 @@ switch (true) do
         case (_unitRole == "sfsl") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponGL + _itemWeaponSFSL + _itemWeaponCQB + _itemSpecial + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemWeaponARAmmo + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemPackMedium + _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        
+        player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "sfmed") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        
+        player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "sfmat") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemWeaponMAT + _itemAmmoMAT + _itemPackMedium + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        
+        player setUnitTrait ["Medic", true];
     };
         case (_unitRole == "sfar") :
     {
         [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponAR + _itemWeaponARAmmo + _itemWeaponSFAR + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter + _itemSniper + _itemAmmoMAT + _itemMedic + _itemMod + _itemReflexSight + _itemWeaponPistol + _itemWeaponMMG + _itemWeaponMMGAmmo + _itemPackMedium + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        
+        player setUnitTrait ["Medic", true];
+    };
+        case (_unitRole == "sfdmr") :
+    {
+        [arsenal, (_itemEquipment + _itemFacewear + _itemWeaponLAT + _itemAmmoLAT + _itemWeaponCQB + _itemSpecial + _itemWeaponARAmmo + _itemWeaponHighCapAmmo + _itemWeaponSharpshooter +  _itemWeaponSniper + _itemSniper + _itemAmmoMAT + _itemMod + _itemReflexSight + _itemWeaponRifle + _itemWeaponPistol + _itemLeaderEquipment + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemSF + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        
+        player setUnitTrait ["Medic", true];
     };
     case (_unitRole == "ceng") :
     {
-        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo + _itemEngineer + _itemPackHeavy + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        [arsenal, (_itemEquipment + _itemFacewear + _itemMod + _itemReflexSight + _itemWeaponCQB + _itemWeaponPistol + _itemWeaponRifle + _itemWeaponCarbine + _itemWeaponAmmo + _itemWeaponTracerAmmo +  _itemEngineer + _itemPackHeavy + _itemUAVTermial + _tarkovuniforms)] call ace_arsenal_fnc_initBox;
+        
+        player setUnitTrait ["UAVHacker", true];
 
         if (isNil "mjb_engiButtonId") then {mjb_engiButtonId = -1;};
         mjb_engiButtonId = [(_itemEngineer), "Engineer","\A3\ui_f\data\igui\cfg\actions\repair_ca.paa", mjb_engiButtonId] call ace_arsenal_fnc_addRightPanelButton;
