@@ -4,7 +4,9 @@
 	*Faction: Example Russian Forces (EMR Flora)
 */
 
-// CHANGES HERE WILL NOT BE REFLECTED UNLESS A LINE IN DESCRIPTION.ext IS UNCOMMENTED
+// !!!!
+// CHANGES HERE WILL NOT BE REFLECTED UNLESS A LINE IN description.ext IS UNCOMMENTED
+// !!!!
 
 // Weaponless Baseclass
 class baseMan 
