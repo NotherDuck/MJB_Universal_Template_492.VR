@@ -517,10 +517,15 @@ private _itemMod =
     "rhsgref_sdn6_suppressor",
     "rhsusf_acc_ardec_m240",
 
-    "Tier1_Gemtech_Halo",
+    /*"Tier1_Gemtech_Halo",
     "Tier1_SOCOM762_2_DE",
     "Tier1_SOCOM762_2_Black",
-    "Tier1_kac_556_qdc_cqb_black",
+    "Tier1_kac_556_qdc_cqb_black",*/
+
+	"muzzle_snds_65_ti_blk_f", // for persistent stuff
+	"muzzle_snds_338_black",
+	"muzzle_snds_570",
+	"muzzle_snds_58_blk_f",
 
     //============================================================
     //Bipod & Foregrips
