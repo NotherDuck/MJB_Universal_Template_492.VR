@@ -80,6 +80,7 @@ private _leaderRole = ["tl","sl"];
 private _aceMedLoaded = isClass(configFile >> "CfgPatches" >> "ace_medical_engine"); //Store whether ace med is present
 
 private _winter = true; // true to enable winter camo
+private _enableCBRN = false; // true to enable CBRN Facewear, people without contact will get ads
 
 arsenal = "building" createVehicleLocal [0,0,0];
 
@@ -365,10 +366,12 @@ private _itemPackHeavy =
 ];
 _itemPackHeavy append _itemPackMedium;
 
-private _itemFacewear =
+private _itemFacewear = "getNumber (_x >> 'scope') isEqualTo 2" configClasses (configFile >> "CfgGlasses") apply {configName _x};
+/*private _itemFacewear =
 [
     //Vanilla
     "G_Balaclava_blk",
+    "G_Bandanna_khk",
     "G_Bandanna_tan",
     "G_Bandanna_oli",
     "G_Bandanna_shades",
@@ -378,6 +381,14 @@ private _itemFacewear =
     "G_Squares",
     "G_Tactical_Clear",
     "G_Aviator",
+	"G_Balaclava_Flecktarn",
+	"G_Balaclava_Tropentarn",
+	"G_Balaclava_oli",
+	"G_Balaclava_combat",
+	"G_Bandanna_beast",
+	"G_Bandanna_BlueFlame2",
+	"G_Bandanna_RedFlame1",
+	"G_Bandanna_Vampire_01",
 
     //CUP
     "CUP_G_ESS_BLK",
@@ -423,7 +434,7 @@ private _itemFacewear =
 
     //RHS
     "rhs_balaclava"
-];
+];*/
 
 private _itemSpecial =
 [
@@ -524,6 +535,7 @@ private _itemMod =
 
 	"muzzle_snds_65_ti_blk_f", // for persistent stuff
 	"muzzle_snds_338_black",
+	"muzzle_snds_93mmg",
 	"muzzle_snds_570",
 	"muzzle_snds_58_blk_f",
 
@@ -917,7 +929,8 @@ private _itemWeaponAmmo =
 
     //Make eyeballs hurt
     "ACE_M84",
-    "ACE_Chemlight_HiGreen"
+    "ACE_Chemlight_HiGreen",
+	"ACE_Chemlight_IR"
 ];
 
 private _itemWeaponTracerAmmo =
@@ -1336,7 +1349,8 @@ private _itemSniperAmmo = [
     "greenmag_ammo_127x108_basic_60Rnd",
     "greenmag_ammo_338_basic_30Rnd",
     "greenmag_ammo_338_basic_60Rnd",
-    "greenmag_ammo_46x30_basic_60Rnd"
+    "greenmag_ammo_46x30_basic_60Rnd",
+    "greenmag_ammo_93x64_basic_60Rnd"
 ];
 
 private _itemWeaponGL =
@@ -1745,6 +1759,41 @@ _itemTankCrew append _itemHats;
 _itemTankCrew append _itemNVG;
 _itemTankCrew append _itemWeaponMelee;
 
+private _airHelm = [
+    "H_PilotHelmetHeli_B",
+    "H_PilotHelmetHeli_O",
+    "H_PilotHelmetHeli_I",
+	"rhsusf_ihadss",
+	"rhsusf_hgu56p_visor",
+	"rhsusf_hgu56p_visor_mask",
+	"rhsusf_hgu56p_visor_mask_mo",
+	"rhsusf_hgu56p_mask_smiley",
+	"rhsusf_hgu56p_visor_mask_smiley",
+	"rhsusf_hgu56p_green",
+	"rhsusf_hgu56p_visor_green",
+	"rhsusf_hgu56p_visor_mask_green",
+	"rhsusf_hgu56p_visor_mask_green_mo",
+	"rhsusf_hgu56p_green",
+	"rhsusf_hgu56p_black",
+	"rhsusf_hgu56p_visor_mask_black",
+	"rhsusf_hgu56p_visor_mask_Empire_black",
+	"rhsusf_hgu56p_white",
+	"rhsusf_hgu56p_visor_white",
+	"rhsusf_hgu56p_pink",
+	"rhsusf_hgu56p_visor_pink",
+	"rhsusf_hgu56p_visor_mask_pink",
+	"rhsusf_hgu56p_saf",
+	"rhsusf_hgu56p_visor_saf",
+	"rhsusf_hgu56p_visor_mask_saf",
+	"rhsusf_hgu56p_tan",
+	"rhsusf_hgu56p_visor_tan",
+	"rhsusf_hgu56p_visor_mask_tan",
+	"rhs_zsh7a_mike_alt",
+	"rhs_zsh7a_mike_green",
+	"rhs_zsh7a_mike_green_alt",
+	"rhs_zsh7a_mike"
+];
+
 private _itemHeloCrew =
 [
     "diw_armor_plates_main_plate",
@@ -1756,7 +1805,6 @@ private _itemHeloCrew =
     "ACRE_PRC148",
     "ACRE_PRC343",
     "SmokeShellBlue",
-    "H_PilotHelmetHeli_B",
     "WU_B_HeliPilotCoveralls",
     "WU_I_HeliPilotCoveralls",
     "U_B_HeliPilotCoveralls",
@@ -1782,6 +1830,7 @@ private _itemHeloCrew =
     "Tier1_Larue_FUG_Black"
 ];
 _itemHeloCrew append _itemHats;
+_itemHeloCrew append _airHelm;
 _itemHeloCrew append _itemNVG;
 _itemHeloCrew append _itemWeaponMelee;
 
@@ -1796,6 +1845,8 @@ private _itemAirCrew =
     "ACE_Chemlight_UltraHiOrange",
     "SmokeShellOrange",
     "H_PilotHelmetFighter_B",
+    "H_PilotHelmetFighter_O",
+    "H_PilotHelmetFighter_B",
     "Rangefinder",
     "ACE_Vector",
     "ItemMap",
@@ -1804,9 +1855,15 @@ private _itemAirCrew =
     "ItemWatch",
     "ACE_MapTools",
     "ACE_microDAGR",
-    "G_Bandanna_aviator"
+    "G_Bandanna_aviator",
+	"rhs_zsh7a_alt",
+	"rhs_zsh7a",
+	"RHS_jetpilot_usaf"
 ];
 _itemAirCrew append _itemHats;
+_itemAirCrew append _airHelm;
+_itemAirCrew append _itemNVG;
+_itemAirCrew append _itemWeaponMelee;
 
 private _itemMedical = [""];
 private _itemMedicalAdv = [""];
@@ -1870,21 +1927,31 @@ if (_hasApex) then {
         "U_I_C_Soldier_Camo_F"
     ];
 
-    _itemFacewear append [
-        "G_Balaclava_TI_blk_F",
-        "G_Balaclava_TI_G_blk_F"
-    ];
-
     _itemMod append [
         "optic_ERCO_blk_F"
     ];
 };
+if !(_hasApex) then {
+    _itemFacewear = _itemFacewear - [
+        "G_Balaclava_TI_blk_F",
+        "G_Balaclava_TI_G_blk_F",
+		"G_Balaclava_TI_G_tna_F",
+		"G_Balaclava_TI_tna_F"
+    ];
+};
+
+if !(_hasLoW) then {
+    _itemFacewear = _itemFacewear - [
+        "G_Respirator_blue_F",
+        "G_Respirator_white_F",
+		"G_Respirator_yellow_F",
+		"G_EyeProtectors_F",
+		"G_EyeProtectors_Earpiece_F",
+		"G_WirelessEarpiece_F"
+    ];
+};
 
 if (_hasContact) then {
-    _itemEquipment append [
-        "G_Blindfold_01_black_F",
-        "G_Blindfold_01_white_F"
-    ];
 
     _itemLeaderEquipment append [
         "H_Beret_EAF_01_F"
@@ -1897,6 +1964,21 @@ if (_hasContact) then {
     _itemSF append [
         "H_HelmetHBK_chops_F",
         "H_HelmetHBK_ear_F"
+    ];
+};
+if !(_hasContact) then {
+    _itemFacewear = _itemFacewear - [
+        "G_Blindfold_01_black_F",
+        "G_Blindfold_01_white_F"
+	];
+};
+if (!_enableCBRN) then {
+    _itemFacewear = _itemFacewear - [
+		"G_AirPurifyingRespirator_01_F",
+		"G_AirPurifyingRespirator_02_black_F",
+		"G_AirPurifyingRespirator_02_olive_F",
+		"G_AirPurifyingRespirator_02_sand_F",
+		"G_RegulatorMask_F"
     ];
 };
 
