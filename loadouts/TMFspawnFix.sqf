@@ -23,8 +23,7 @@ waitUntil {sleep 8; !(isNil {_check = (isPlayer _player); _check}) && {_check}};
         player call diw_armor_plates_main_fnc_addPlayerHoldActions;
         [] call mjb_arsenal_fnc_initStuff;
         [] call mjb_perks_fnc_initStuff;
-		player setVariable ["greenmag_main_MagSkillCoef", 1.4];
-		player setVariable ["greenmag_main_BeltSkillCoef", 1.4];
+		player setVariable ["greenmag_main_MagSkillCoef", 0.6];
 		if (mjb_resyncAction) then { 
 			[{  private _var = ("mjb_" + (((name player) splitString "([ ]/:){}") joinString ""));
 				["mjb_resyncPlayer",[player], _var] call CBA_fnc_globalEventJIP;
