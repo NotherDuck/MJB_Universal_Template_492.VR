@@ -1,5 +1,8 @@
+
+
+// Add lines above or comment below line when making changes
 if (!isNil "mjb_arsenal_fnc_playerLocalInit") exitWith {[] call mjb_arsenal_fnc_playerLocalInit;};
-// Comment above line when making changes
+
 
 //0 = execVM 'loadouts\arsenal.sqf'; // uncomment this
 [] call mjb_arsenal_fnc_arsenal; // and comment this if changing arsenal
@@ -37,6 +40,7 @@ private _plateMachine = [[player], true] call CBA_statemachine_fnc_create;
     diw_armor_plates_main_timeToAddPlate = bef_ttap;
 	if (time < 1290 || {mjb_jipFast}) then {
       player call diw_armor_plates_main_fnc_fillVestWithPlates; // Fill plates in-case anyone forgot
+      player call diw_armor_plates_main_fnc_updatePlateUi;
 	};
 	mjb_jipFast = false;
 }, {}, "slow"] call CBA_statemachine_fnc_addState;

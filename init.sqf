@@ -1,5 +1,8 @@
+
+
+// Add lines above or comment below line when making changes
 if (!isNil "mjb_arsenal_fnc_missionInit") exitWith {[] call mjb_arsenal_fnc_missionInit;};
-// Comment above line when making changes
+
 
 ["CAManBase", "Reloaded", {
     params ["_unit", "", "", "", "_oldMagazine"];
